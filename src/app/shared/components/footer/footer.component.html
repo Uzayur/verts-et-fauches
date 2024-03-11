@@ -1,28 +1,10 @@
 <footer
-  class="flex flex-row justify-content-around bottom-0 fixed background-green w-full py-3">
-  <img
-    ngSrc="../../../../assets/footer/price.svg"
-    alt="Price logo"
-    height="45"
-    width="45" />
-  <img
-    ngSrc="../../../../assets/footer/travel.svg"
-    alt="Travel logo alternative"
-    height="50"
-    width="50" />
-  <img
-    ngSrc="../../../../assets/footer/home.svg"
-    alt="Home logo"
-    height="45"
-    width="45" />
-  <img
-    ngSrc="../../../../assets/footer/plan.svg"
-    alt="Plan logo"
-    height="47"
-    width="47" />
-  <img
-    ngSrc="../../../../assets/footer/profile.svg"
-    alt="Profile logo"
-    height="49"
-    width="49" />
+  class="flex flex-row justify-content-around align-items-center bottom-0 fixed background-green w-full">
+  <div *ngFor="let tab of footerTabs" class="py-4" (click)="onItemClick(tab)">
+    <img
+      [src]="'../../../../assets/footer/' + tab.icon + '.svg'"
+      [alt]="'tab.icon' + ' logo'"
+      [style.height]="tab.size"
+      [style.width]="tab.size" />
+  </div>
 </footer>
