@@ -1,4 +1,10 @@
-import { NgForOf, NgOptimizedImage } from '@angular/common';
+import {
+  NgClass,
+  NgForOf,
+  NgIf,
+  NgOptimizedImage,
+  NgStyle,
+} from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -15,6 +21,9 @@ import { PrimengModule } from '~/app/primeng/primeng.module';
     FormsModule,
     NgOptimizedImage,
     NgForOf,
+    NgIf,
+    NgStyle,
+    NgClass,
   ],
   exports: [FormsModule, ReactiveFormsModule, FooterComponent],
 })

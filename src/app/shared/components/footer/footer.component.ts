@@ -11,27 +11,27 @@ export class FooterComponent {
   footerTabs: FooterTab[] = [
     {
       path: '/price',
-      icon: 'price',
+      icon: 'pi pi-tag',
       size: 42,
     },
     {
       path: '/travel',
-      icon: 'travel',
+      icon: 'pi pi-briefcase',
       size: 50,
     },
     {
       path: '/',
-      icon: 'home',
+      icon: 'pi pi-home',
       size: 45,
     },
     {
       path: '/location',
-      icon: 'location',
+      icon: 'pi pi-map-marker',
       size: 47,
     },
     {
       path: '/profile',
-      icon: 'profile',
+      icon: 'pi pi-user',
       size: 49,
     },
   ];
@@ -40,5 +40,16 @@ export class FooterComponent {
 
   onItemClick(tab: FooterTab): void {
     void this.router.navigate([tab.path]);
+  }
+
+  isActiveTab(tab: FooterTab): boolean {
+    const tabs = this.router.url.split('/').filter(tab => tab);
+
+    return (
+      tabs.some(route => {
+        return route === tab.path.split('/').pop();
+      }) ||
+      (!tabs.pop() && !tab.path.split('/').pop())
+    );
   }
 }

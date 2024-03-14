@@ -1,0 +1,18 @@
+.active-tab {
+    position: relative;
+}
+
+.active-tab::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2.5px;
+    background-color: white;
+    transition: width 0.3s linear;
+}
+
+.active-tab.active::after {
+    width: calc(100%);
+}

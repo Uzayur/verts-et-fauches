@@ -1,10 +1,12 @@
 <footer
   class="flex flex-row justify-content-around align-items-center bottom-0 fixed background-green w-full">
-  <div *ngFor="let tab of footerTabs" class="py-4" (click)="onItemClick(tab)">
-    <img
-      [src]="'../../../../assets/footer/' + tab.icon + '.svg'"
-      [alt]="'tab.icon' + ' logo'"
-      [style.height]="tab.size"
-      [style.width]="tab.size" />
+  <div
+    *ngFor="let tab of footerTabs"
+    [ngClass]="{ 'active-tab': true, active: isActiveTab(tab) }"
+    class="my-5"
+    (click)="onItemClick(tab)">
+    <span
+      [class]="tab.icon + ' mb-2'"
+      style="color: white; font-size: 2.2rem; font-weight: revert"></span>
   </div>
 </footer>
