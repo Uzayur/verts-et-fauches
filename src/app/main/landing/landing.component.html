@@ -1,0 +1,22 @@
+<div
+  *ngIf="isShow"
+  class="h-full w-full fixed z-1 background-green flex flex-column justify-content-center align-items-center">
+  <img
+    ngSrc="assets/lonely-planet/lonely-planet.svg"
+    alt="Lonely Planet logo"
+    height="45"
+    width="321" />
+  <span class="mt-2 text-3xl text-white font-medium letter-spacing"
+    >présente</span
+  >
+  <img
+    class="mt-4"
+    ngSrc="assets/green-and-broke.png"
+    alt="Green and Broke logo"
+    height="49"
+    width="357"
+    priority />
+  <p-progressSpinner
+    styleClass="mt-4 w-2rem h-2rem text-white"
+    strokeWidth="5"></p-progressSpinner>
+</div>
