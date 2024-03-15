@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,13 +6,17 @@ import { Router } from '@angular/router';
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
-export class LandingComponent {
+export class LandingComponent implements OnInit {
+  @Input() timeout!: number;
+
   isShow = true;
 
-  constructor(private router: Router) {
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
     setTimeout(() => {
       this.isShow = false;
       void this.router.navigate(['/home']);
-    }, 3000);
+    }, this.timeout);
   }
 }
