@@ -12,27 +12,22 @@ export class FooterComponent {
     {
       path: '/price',
       icon: 'pi pi-tag',
-      size: 42,
     },
     {
       path: '/travel',
       icon: 'pi pi-briefcase',
-      size: 50,
     },
     {
-      path: '/',
+      path: '/home',
       icon: 'pi pi-home',
-      size: 45,
     },
     {
       path: '/location',
       icon: 'pi pi-map-marker',
-      size: 47,
     },
     {
       path: '/profile',
       icon: 'pi pi-user',
-      size: 49,
     },
   ];
 
@@ -45,11 +40,8 @@ export class FooterComponent {
   isActiveTab(tab: FooterTab): boolean {
     const tabs = this.router.url.split('/').filter(tab => tab);
 
-    return (
-      tabs.some(route => {
-        return route === tab.path.split('/').pop();
-      }) ||
-      (!tabs.pop() && !tab.path.split('/').pop())
-    );
+    return tabs.some(route => {
+      return route === tab.path.split('/').pop();
+    });
   }
 }

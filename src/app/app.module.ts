@@ -9,6 +9,7 @@ import { AppRoutingModule } from '~/app/app-routing.module';
 import { AppComponent } from '~/app/app.component';
 import { HomeComponent } from '~/app/main/home/home.component';
 import { SharedModule } from '~/app/shared/shared.module';
+import { LandingComponent } from '~/app/main/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SharedModule } from '~/app/shared/shared.module';
     PriceComponent,
     TravelComponent,
     ProfileComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
