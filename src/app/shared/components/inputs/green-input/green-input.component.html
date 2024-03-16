@@ -1,0 +1,18 @@
+<div class="w-full relative">
+  <input
+    type="text"
+    class="w-full py-3 px-4"
+    pInputText
+    [id]="formControlName"
+    [value]="'value'"
+    [placeholder]="placeholder"
+    [formControl]="formControl"
+    [appFormError]="formControlName"
+    (formError)="onFormError($event)"
+    [isSubmitted]="isSubmitted" />
+  <span [class]="icon" class="input-icon"></span>
+</div>
+
+<div *ngIf="error" class="absolute text-sm text-red mt-1">
+  {{ error }}
+</div>

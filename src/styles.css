@@ -10,16 +10,58 @@ body {
     margin: 0;
     height: 100%;
     overflow: hidden;
-    font-family: BentonSansCondE, sans-serif;
+    font-family: BentonSans, sans-serif;
+    color: #4F5358;
 }
 
 .letter-spacing {
     letter-spacing: 1px;
 }
 
+
+/*  INPUT  */
+input {
+    border-radius: 15rem;
+    color: #4F5358;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #838B95;
+}
+
+input:focus {
+    outline: 0;
+}
+
+.input-icon {
+    position: absolute;
+    font-size: 1.6rem;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.p-inputtext {
+    font-size: 20px
+}
+
+
+/*  COLOR  */
 .background-green {
     background-color: #447B5D;
 }
+
+.background-red {
+    background-color: red;
+}
+
+.text-red {
+    color: red;
+}
+
+/*  NG STYLE  */
 
 .p-progress-spinner-circle {
     stroke: #ffffff !important;
