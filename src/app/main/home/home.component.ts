@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { itemsInfo } from '~/app/shared/const/item-info.const';
+import { UtilsService } from '~/app/shared/services/utils/utils.service';
+import { ItemInfo } from '~/app/shared/types/items/item-info.type';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +12,27 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 export class HomeComponent implements OnInit {
   searchForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  itemsInfo = itemsInfo;
 
-  public get name(): FormControl {
-    return this.searchForm.get('name') as FormControl;
+  constructor(
+    private formBuilder: FormBuilder,
+    private utils: UtilsService
+  ) {}
+
+  public get search(): FormControl {
+    return this.searchForm.get('search') as FormControl;
+  }
+
+  public get searchValue(): string {
+    return this.searchForm.get('search')?.value;
+  }
+
+  get filteredItems(): ItemInfo[] {
+    return this.itemsInfo.filter(
+      item =>
+        this.utils.compareStrings(item.city, this.searchValue) ||
+        this.utils.compareStrings(item.country, this.searchValue)
+    );
   }
 
   ngOnInit(): void {
@@ -21,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   initForm(): void {
     this.searchForm = this.formBuilder.group({
-      name: [''],
+      search: [''],
     });
   }
 }
