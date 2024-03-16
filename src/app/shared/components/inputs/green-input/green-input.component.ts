@@ -23,6 +23,47 @@ export class GreenInputComponent {
 
   public value!: string;
 
+  onChange: (value: any) => void = () => {
+    /*no-op*/
+  };
+  onTouched: () => void = () => {
+    /*no-op*/
+  };
+
+  onFocus(): void {
+    this.onTouched();
+  }
+  onBlur(): void {
+    this.onTouched();
+  }
+
+  /**
+   * Writes a new value to the input.
+   * @param {string} value  - The new value (string).
+   * @returns {void}
+   */
+  writeValue(value: string): void {
+    this.value = value;
+  }
+
+  /**
+   * Registers a callback for value changes.
+   * @param {void} fn - The callback function (value: any) => void.
+   * @returns {void}
+   */
+  registerOnChange(fn: (value: any) => void): void {
+    this.onChange = fn;
+  }
+
+  /**
+   * Registers a callback for touch events.
+   * @param {void} fn - The callback function () => void.
+   * @returns {void}
+   */
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn;
+  }
+
   onFormError(message: string | null): void {
     this.error = message;
   }
