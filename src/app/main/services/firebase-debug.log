@@ -1,0 +1,18 @@
+[debug] [2024-03-17T09:47:40.153Z] ----------------------------------------------------------------------
+[debug] [2024-03-17T09:47:40.154Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Mathis\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-03-17T09:47:40.155Z] CLI Version:   13.3.0
+[debug] [2024-03-17T09:47:40.155Z] Platform:      win32
+[debug] [2024-03-17T09:47:40.155Z] Node Version:  v18.15.0
+[debug] [2024-03-17T09:47:40.156Z] Time:          Sun Mar 17 2024 10:47:40 GMT+0100 (heure normale d’Europe centrale)
+[debug] [2024-03-17T09:47:40.156Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-17T09:47:40.216Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-17T09:47:40.216Z] > authorizing via signed-in user (mathismoreau0610@gmail.com)
+[debug] [2024-03-17T09:47:40.216Z] [iam] checking project vert-et-fauches for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-03-17T09:47:40.218Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/vert-et-fauches:testIamPermissions [none]
+[debug] [2024-03-17T09:47:40.218Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/vert-et-fauches:testIamPermissions x-goog-quota-user=projects/vert-et-fauches
+[debug] [2024-03-17T09:47:40.219Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/vert-et-fauches:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-17T09:47:40.771Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/vert-et-fauches:testIamPermissions 200
+[debug] [2024-03-17T09:47:40.771Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/vert-et-fauches:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-03-17T09:47:40.773Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/vert-et-fauches [none]
+[debug] [2024-03-17T09:47:41.012Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/vert-et-fauches 200

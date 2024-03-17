@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from '~/app/main/home/home.component';
-import { LandingComponent } from '~/app/main/landing/landing.component';
-import { LocationComponent } from '~/app/main/location/location.component';
-import { PriceComponent } from '~/app/main/price/price.component';
-import { ProfileComponent } from '~/app/main/profile/profile.component';
-import { TravelComponent } from '~/app/main/travel/travel.component';
+import { HomeComponent } from '~/app/main/components/home/home.component';
+import { LandingComponent } from '~/app/main/components/landing/landing.component';
+import { LocationComponent } from '~/app/main/components/location/location.component';
+import { PriceComponent } from '~/app/main/components/price/price.component';
+import { ProfileComponent } from '~/app/main/components/profile/profile.component';
+import { TravelComponent } from '~/app/main/components/travel/travel.component';
 
 const routes: Routes = [
   {

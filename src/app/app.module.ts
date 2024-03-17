@@ -1,15 +1,15 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { LocationComponent } from 'src/app/main/location/location.component';
-import { PriceComponent } from './main/price/price.component';
-import { TravelComponent } from './main/travel/travel.component';
-import { ProfileComponent } from './main/profile/profile.component';
 import { AppRoutingModule } from '~/app/app-routing.module';
 import { AppComponent } from '~/app/app.component';
-import { HomeComponent } from '~/app/main/home/home.component';
+import { HomeComponent } from '~/app/main/components/home/home.component';
+import { LandingComponent } from '~/app/main/components/landing/landing.component';
+import { LocationComponent } from '~/app/main/components/location/location.component';
+import { PriceComponent } from '~/app/main/components/price/price.component';
+import { ProfileComponent } from '~/app/main/components/profile/profile.component';
+import { TravelComponent } from '~/app/main/components/travel/travel.component';
 import { SharedModule } from '~/app/shared/shared.module';
-import { LandingComponent } from '~/app/main/landing/landing.component';
 
 @NgModule({
   declarations: [
