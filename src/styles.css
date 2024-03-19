@@ -57,6 +57,10 @@ input:focus {
     margin-bottom: 0.35rem;
 }
 
+.mt-1-px {
+    margin-top: 6px
+}
+
 
 /*  COLOR  */
 .background-green {

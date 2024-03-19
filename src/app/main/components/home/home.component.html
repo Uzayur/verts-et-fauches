@@ -54,8 +54,8 @@
   </div>
 
   <div class="flex flex-column">
-    <span class="text-2xl font-medium mb-2">Recherches tendances</span>
-    <div *ngFor="let item of trendItemsInfo">
+    <span class="text-2xl font-medium mb-2">Recherches récentes</span>
+    <div *ngFor="let item of searchHistory | async as items">
       <div
         class="flex flex-row justify-content-between align-items-center card-border my-2"
         (click)="onClickItem(item.city)">
@@ -80,6 +80,14 @@
             height="23" />
         </div>
       </div>
+    </div>
+
+    <div *ngIf="searchHistory | async as items" class="flex flex-column">
+      <ng-container *ngIf="items.length === 0">
+        <span class="text-lg py-8 align-self-center"
+          >Aucun résultat récent</span
+        >
+      </ng-container>
     </div>
   </div>
 </div>
