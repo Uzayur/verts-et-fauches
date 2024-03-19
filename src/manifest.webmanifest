@@ -6,5 +6,11 @@
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
-  "icons": []
+  "icons": [
+    {
+      "src": "assets/green-and-broke-app.png",
+      "sizes": "212x212",
+      "type": "image/png"
+    }
+  ]
 }
