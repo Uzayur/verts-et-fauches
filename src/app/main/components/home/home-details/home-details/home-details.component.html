@@ -1,5 +1,23 @@
 <div *ngIf="item">
-  <div class="sticky top-0">
-    <img class="w-full h-auto" [src]="item.picture" alt="City picture" />
+  <div class="sticky top-0 image-container">
+    <img [src]="item.picture" alt="City picture" />
+    <div class="city-text flex flex-row justify-content-between">
+      <div>
+        <span class="text-2xl font-semibold"
+          >{{ item.city }}, {{ item.country }}</span
+        >
+        <span class="text-xxs ml-2 mt-2-5 font-bold"
+          >{{ item.distance }} km</span
+        >
+      </div>
+      <span class="text-2xl font-semibold">€€</span>
+    </div>
+    <div class="back-arrow" (click)="onClickBackArrow()">
+      <img
+        ngSrc="assets/icons/arrow/arrow-left.svg"
+        alt="Left arrow"
+        width="30"
+        height="30" />
+    </div>
   </div>
 </div>
