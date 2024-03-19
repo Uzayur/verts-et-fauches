@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { itemsInfo } from '~/app/shared/const/item-info.const';
+import { Router } from '@angular/router';
+import { itemsInfo } from '~/app/shared/const/item-info/items-info.const';
+import { trendItemsInfo } from '~/app/shared/const/item-info/trend-items-info.const';
 import { UtilsService } from '~/app/shared/services/utils/utils.service';
 import { ItemInfo } from '~/app/shared/types/items/item-info.type';
 
@@ -13,10 +15,12 @@ export class HomeComponent implements OnInit {
   searchForm!: FormGroup;
 
   itemsInfo = itemsInfo;
+  trendItemsInfo = trendItemsInfo;
 
   constructor(
     private formBuilder: FormBuilder,
-    private utils: UtilsService
+    private utils: UtilsService,
+    private router: Router
   ) {}
 
   public get search(): FormControl {
@@ -43,5 +47,9 @@ export class HomeComponent implements OnInit {
     this.searchForm = this.formBuilder.group({
       search: [''],
     });
+  }
+
+  onClickItem(city: string): void {
+    void this.router.navigate(['/home', city]);
   }
 }

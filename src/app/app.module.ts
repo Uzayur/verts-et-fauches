@@ -1,6 +1,8 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { HomeDetailsComponent } from './main/components/home/home-details/home-details/home-details.component';
 import { AppRoutingModule } from '~/app/app-routing.module';
 import { AppComponent } from '~/app/app.component';
 import { HomeComponent } from '~/app/main/components/home/home.component';
@@ -20,9 +22,11 @@ import { SharedModule } from '~/app/shared/shared.module';
     TravelComponent,
     ProfileComponent,
     LandingComponent,
+    HomeDetailsComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

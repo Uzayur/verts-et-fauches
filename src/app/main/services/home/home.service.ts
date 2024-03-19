@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ItemInfo } from '~/app/shared/types/items/item-info.type';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HomeService {
+  searchHistory$: Observable<ItemInfo[]>;
+
   private searchHistory = new BehaviorSubject<ItemInfo[]>([]);
 
-  constructor() {}
+  constructor() {
+    this.searchHistory$ = this.searchHistory.asObservable();
+  }
 }
