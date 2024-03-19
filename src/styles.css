@@ -1,6 +1,10 @@
 @import 'primeflex/primeflex.css';
 @import 'primeicons/primeicons.css';
 
+* {
+    overscroll-behavior: none;
+}
+
 html {
     margin: 0;
     height: 100%
@@ -9,7 +13,6 @@ html {
 body {
     margin: 0;
     height: 100%;
-    overflow: hidden;
     font-family: BentonSans, sans-serif;
     color: #4F5358;
 }
@@ -61,8 +64,14 @@ input:focus {
     color: red;
 }
 
-/*  NG STYLE  */
 
+/*  SCROLL  */
+.overscroll-auto {
+    overscroll-behavior: auto;
+}
+
+
+/*  NG STYLE  */
 .p-progress-spinner-circle {
     stroke: #ffffff !important;
 }
