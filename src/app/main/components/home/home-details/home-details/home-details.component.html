@@ -1,6 +1,6 @@
 <div
   *ngIf="item"
-  class="sticky top-0 image-header flex align-items-center overflow-hidden">
+  class="sticky top-0 image-header z-1 flex align-items-center overflow-hidden">
   <img class="max-w-full h-auto" [src]="item.picture" alt="City picture" />
   <div
     class="text-header absolute left-0 bottom-0 text-white flex flex-row justify-content-between px-3 py-2">
@@ -27,7 +27,18 @@
   <div
     *ngFor="let part of item?.description; let last = last"
     class="flex flex-column px-3 text-justify line-height-2">
-    <span class="text-2xl font-medium">{{ part.title }}</span>
+    <span class="text-2xl font-semibold">{{ part.title }}</span>
+    <span class="text-base mt-2">{{ part.content }}</span>
+    <p-divider
+      *ngIf="!last"
+      class="my-4 w-10 align-self-center text-green test"></p-divider>
+  </div>
+</div>
+<div class="flex flex-column pt-3">
+  <div
+    *ngFor="let part of item?.description; let last = last"
+    class="flex flex-column px-3 text-justify line-height-2">
+    <span class="text-2xl font-semibold">{{ part.title }}</span>
     <span class="text-base mt-2">{{ part.content }}</span>
     <p-divider
       *ngIf="!last"
