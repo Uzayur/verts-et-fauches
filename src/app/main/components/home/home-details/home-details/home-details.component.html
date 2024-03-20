@@ -34,17 +34,6 @@
       class="my-4 w-10 align-self-center text-green test"></p-divider>
   </div>
 </div>
-<div class="flex flex-column pt-3">
-  <div
-    *ngFor="let part of item?.description; let last = last"
-    class="flex flex-column px-3 text-justify line-height-2">
-    <span class="text-2xl font-semibold">{{ part.title }}</span>
-    <span class="text-base mt-2">{{ part.content }}</span>
-    <p-divider
-      *ngIf="!last"
-      class="my-4 w-10 align-self-center text-green test"></p-divider>
-  </div>
-</div>
 
 <div class="flex flex-row justify-content-between p-3">
   <button class="btn-secondary" (click)="onClickNavigate('/price')">
