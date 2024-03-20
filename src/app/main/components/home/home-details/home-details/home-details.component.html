@@ -1,23 +1,45 @@
-<div *ngIf="item">
-  <div class="sticky top-0 image-container">
-    <img [src]="item.picture" alt="City picture" />
-    <div class="city-text flex flex-row justify-content-between">
-      <div>
-        <span class="text-2xl font-semibold"
-          >{{ item.city }}, {{ item.country }}</span
-        >
-        <span class="text-xxs ml-2 mt-2-5 font-bold"
-          >{{ item.distance }} km</span
-        >
-      </div>
-      <span class="text-2xl font-semibold">€€</span>
+<div
+  *ngIf="item"
+  class="sticky top-0 image-header flex align-items-center overflow-hidden">
+  <img class="max-w-full h-auto" [src]="item.picture" alt="City picture" />
+  <div
+    class="text-header absolute left-0 bottom-0 text-white flex flex-row justify-content-between px-3 py-2">
+    <div>
+      <span class="text-2xl font-semibold"
+        >{{ item.city }}, {{ item.country }}</span
+      >
+      <span class="text-xxs ml-2 mt-2-5 font-bold">{{ item.distance }} km</span>
     </div>
-    <div class="back-arrow" (click)="onClickBackArrow()">
-      <img
-        ngSrc="assets/icons/arrow/arrow-left.svg"
-        alt="Left arrow"
-        width="30"
-        height="30" />
-    </div>
+    <span class="text-2xl font-semibold">€€</span>
   </div>
+  <div
+    class="absolute top-0 left-0 mt-2 p-2"
+    (click)="onClickNavigate('/home')">
+    <img
+      ngSrc="assets/icons/arrow/arrow-left.svg"
+      alt="Left arrow"
+      width="30"
+      height="30" />
+  </div>
+</div>
+
+<div class="flex flex-column pt-3">
+  <div
+    *ngFor="let part of item?.description; let last = last"
+    class="flex flex-column px-3 text-justify line-height-2">
+    <span class="text-2xl font-medium">{{ part.title }}</span>
+    <span class="text-base mt-2">{{ part.content }}</span>
+    <p-divider
+      *ngIf="!last"
+      class="my-4 w-10 align-self-center text-green test"></p-divider>
+  </div>
+</div>
+
+<div class="flex flex-row justify-content-between p-3">
+  <button class="btn-secondary" (click)="onClickNavigate('/price')">
+    Comparer
+  </button>
+  <button class="btn-primary" (click)="onClickNavigate('/travel')">
+    Itinéraires
+  </button>
 </div>

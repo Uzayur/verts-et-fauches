@@ -21,7 +21,7 @@ export class HomeDetailsComponent {
       ) ?? null;
   }
 
-  onClickBackArrow(): void {
-    void this.router.navigate(['/home']);
+  onClickNavigate(route: string): void {
+    void this.router.navigate([route]);
   }
 }

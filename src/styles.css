@@ -71,6 +71,10 @@ input:focus {
     background-color: #447B5D;
 }
 
+.text-green {
+    color: #447B5D;
+}
+
 .background-red {
     background-color: red;
 }
@@ -91,6 +95,28 @@ input:focus {
     border-radius: 14px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
     padding: 15px 10px 15px 20px;
+}
+
+
+/*  BUTTON  */
+.btn-primary {
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 20px;
+    color: white;
+    background-color: #678D3E;
+    border: none;
+}
+
+.btn-secondary {
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 20px;
+    color: white;
+    background-color: #8B5A49;
+    border: none;
 }
 
 

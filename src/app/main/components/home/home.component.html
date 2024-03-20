@@ -97,7 +97,7 @@
     <div class="flex flex-column px-3 pt-3">
       <span class="text-2xl font-medium mb-2">Résultat de la recherche</span>
       <div *ngIf="filteredItems.length; else noItems">
-        <div *ngFor="let item of filteredItems">
+        <div *ngFor="let item of filteredItems" class="flex flex-column gap-4">
           <div
             class="flex flex-row justify-content-between align-items-center card-border my-2"
             (click)="onClickItem(item.city)">
@@ -132,11 +132,6 @@
       </ng-template>
     </div>
 
-    <img
-      class="align-self-center"
-      src="assets/lonely-planet/lonely-planet-green.svg"
-      alt="Lonly planet logo"
-      height="50"
-      width="120" />
+    <icon-lonely-planet />
   </div>
 </ng-template>

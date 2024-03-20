@@ -13,10 +13,16 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { FormErrorDirective } from 'src/app/shared/directives/form-error/form-error.directive';
 import { FooterComponent } from './components/footer/footer.component';
 import { GreenInputComponent } from './components/inputs/green-input/green-input.component';
+import { LonelyPlanetComponent } from './components/logo/lonely-planet/lonely-planet.component';
 import { PrimengModule } from '~/app/primeng/primeng.module';
 
 @NgModule({
-  declarations: [FooterComponent, GreenInputComponent, FormErrorDirective],
+  declarations: [
+    FooterComponent,
+    GreenInputComponent,
+    FormErrorDirective,
+    LonelyPlanetComponent,
+  ],
   imports: [
     ReactiveFormsModule,
     ProgressSpinnerModule,
@@ -42,6 +48,7 @@ import { PrimengModule } from '~/app/primeng/primeng.module';
     FooterComponent,
     GreenInputComponent,
     FormErrorDirective,
+    LonelyPlanetComponent,
   ],
 })
 export class SharedModule {}
