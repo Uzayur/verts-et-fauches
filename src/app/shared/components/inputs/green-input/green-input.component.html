@@ -1,16 +1,21 @@
-<div class="w-full relative">
-  <input
-    type="text"
-    class="w-full py-3 px-4"
-    pInputText
-    [id]="formControlName"
-    [value]="'value'"
-    [placeholder]="placeholder"
-    [formControl]="formControl"
-    [appFormError]="formControlName"
-    (formError)="onFormError($event)"
-    [isSubmitted]="isSubmitted" />
-  <span [class]="icon" class="input-icon"></span>
+<div
+  class="w-full relative flex flex-row bg-white border-15 align-items-center justify-content-between gap-1">
+  <div class="w-full ml-3 flex flex-row align-items-center gap-1">
+    <span *ngIf="inputTitle" class="font-semibold w-auto text-no-wrap h-full">
+      {{ inputTitle }}
+    </span>
+    <input
+      type="text"
+      class="py-3 w-full border-15"
+      pInputText
+      [id]="formControlName"
+      [placeholder]="placeholder"
+      [formControl]="formControl"
+      [appFormError]="formControlName"
+      (formError)="onFormError($event)"
+      [isSubmitted]="isSubmitted" />
+  </div>
+  <span [class]="icon" class="input-icon mr-3"></span>
 </div>
 
 <div *ngIf="error" class="absolute text-sm text-red mt-1">

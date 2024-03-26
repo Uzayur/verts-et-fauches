@@ -1,0 +1,5 @@
+@import '../../node_modules/primeng/resources/themes/lara-light-teal/theme.css';
+
+:root {
+    --focus-ring: red;
+}

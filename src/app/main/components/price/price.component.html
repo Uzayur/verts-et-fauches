@@ -1,1 +1,66 @@
-<p>price works!</p>
+<div class="py-4 sticky top-0 background-green">
+  <div
+    class="w-full flex flex-column justify-content-center align-items-center mt-5">
+    <div class="text-white text-2xl">Comparez les meilleurs prix !</div>
+    <form [formGroup]="searchForm" class="w-11 mt-3 flex flex-column gap-3">
+      <green-input
+        [placeholder]="'Paris...'"
+        [inputTitle]="'Départ :'"
+        [icon]="'pi pi-search'"
+        [isSubmitted]="true"
+        [formControl]="departure"
+        [formControlName]="'departure'"></green-input>
+
+      <green-input
+        [placeholder]="'Bruxelles...'"
+        [inputTitle]="'Arrivée :'"
+        [icon]="'pi pi-search'"
+        [isSubmitted]="true"
+        [formControl]="arrival"
+        [formControlName]="'arrival'"></green-input>
+
+      <div class="flex flex-row gap-3 text-no-wrap w-full">
+        <div class="flex flex-row align-items-center gap-2">
+          <span class="text-white font-semibold">Du :</span>
+          <p-calendar
+            [placeholder]="'13/07'"
+            [dateFormat]="'dd/mm'"
+            [showIcon]="true"
+            [formControl]="startDate"></p-calendar>
+        </div>
+        <div class="flex flex-row align-items-center gap-1">
+          <span class="text-white font-semibold">Au :</span>
+          <p-calendar
+            class="border-15"
+            [placeholder]="'06/10'"
+            [dateFormat]="'dd/mm'"
+            [showIcon]="true"
+            [formControl]="endDate"
+            [minDate]="startDateValue"></p-calendar>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-row gap-1 align-items-center font-semibold w-full justify-content-between">
+        <div
+          class="flex flex-row align-items-center py-2 px-3 border-15 bg-white gap-2">
+          Prix
+          <img src="assets/icons/arrow/arrow-bottom.svg" alt="Bottom arrow" />
+        </div>
+        <div
+          class="flex flex-row align-items-center py-2 px-3 border-15 bg-white gap-2">
+          Plus court
+        </div>
+        <div class="py-1 px-2 border-15 bg-white">
+          <img src="assets/transports/train.svg" alt="Train" />
+        </div>
+        <div class="py-1 px-2 border-15 bg-white">
+          <img class="mt-0-5" src="assets/transports/bus.svg" alt="Train" />
+        </div>
+        <div class="py-1 px-2 border-15 bg-white">
+          <img src="assets/transports/bike.svg" alt="Train" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

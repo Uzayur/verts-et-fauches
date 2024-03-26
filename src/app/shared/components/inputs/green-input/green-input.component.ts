@@ -15,6 +15,7 @@ import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class GreenInputComponent {
   @Input() placeholder!: string | null;
+  @Input() inputTitle!: string | null;
   @Input() icon!: string | null;
   @Input({ required: true }) formControlName!: string;
   @Input({ required: true }) formControl!: FormControl;
