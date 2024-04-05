@@ -24,7 +24,7 @@
   class="flex flex-column justify-content-between p-3 gap-3"
   *ngIf="!searchValue; else searchResult">
   <div class="flex flex-column">
-    <span class="text-xl font-medium mb-2">Recherches tendances</span>
+    <span class="text-xl font-medium mb-1">Recherches tendances</span>
     <div *ngFor="let item of trendItemsInfo">
       <div
         class="flex flex-row justify-content-between align-items-center card-border my-1-5"
@@ -84,9 +84,9 @@
 
     <div *ngIf="searchHistory | async as items" class="flex flex-column">
       <ng-container *ngIf="items.length === 0">
-        <span class="text-lg py-8 align-self-center"
-          >Aucun résultat récent</span
-        >
+        <span class="text-lg py-6 align-self-center">
+          Aucun résultat récent
+        </span>
       </ng-container>
     </div>
   </div>
@@ -126,9 +126,9 @@
       </div>
 
       <ng-template #noItems>
-        <span class="text-lg py-5 align-self-center"
-          >Aucun résultat correspondant</span
-        >
+        <span class="text-lg py-5 align-self-center">
+          Aucun résultat correspondant
+        </span>
       </ng-template>
     </div>
 

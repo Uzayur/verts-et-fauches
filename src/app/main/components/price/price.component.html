@@ -43,36 +43,85 @@
       <div
         class="flex flex-row gap-1 align-items-center font-semibold w-full justify-content-between">
         <div
-          class="flex flex-row align-items-center py-2 px-2 border-15 bg-white gap-2">
+          class="flex flex-row align-items-center py-2 px-2 border-15 gap-2"
+          [ngClass]="
+            activeSortFilter === priceHeaderFilters.PRICE
+              ? 'bg-green-secondary text-white'
+              : 'bg-white'
+          "
+          (click)="onClickFilter(priceHeaderFilters.PRICE)">
           Prix
           <img
-            ngSrc="assets/icons/arrow/arrow-bottom.svg"
+            [ngSrc]="
+              activeFilters.includes(priceHeaderFilters.PRICE)
+                ? 'assets/icons/arrow/arrow-bottom-white.svg'
+                : 'assets/icons/arrow/arrow-bottom.svg'
+            "
             alt="Bottom arrow"
             height="17"
             width="16" />
         </div>
         <div
-          class="flex flex-row align-items-center py-2 px-3 border-15 bg-white gap-2">
+          class="flex flex-row align-items-center py-2 px-3 border-15 gap-2"
+          [ngClass]="
+            activeFilters.includes(priceHeaderFilters.SHORTEST)
+              ? 'bg-green-secondary text-white'
+              : 'bg-white'
+          "
+          (click)="onClickFilter(priceHeaderFilters.SHORTEST)">
           Plus court
         </div>
-        <div class="py-1 px-2 border-15 bg-white">
+        <div
+          class="py-1 px-2 border-15"
+          [ngClass]="
+            activeFilters.includes(priceHeaderFilters.TRAIN)
+              ? 'bg-green-secondary'
+              : 'bg-white'
+          "
+          (click)="onClickFilter(priceHeaderFilters.TRAIN)">
           <img
-            ngSrc="assets/transports/train.svg"
+            [ngSrc]="
+              activeFilters.includes(priceHeaderFilters.TRAIN)
+                ? 'assets/transports/train-white.svg'
+                : 'assets/transports/train.svg'
+            "
             alt="Train"
             height="25"
             width="25" />
         </div>
-        <div class="py-1 px-2 border-15 bg-white">
+        <div
+          class="py-1 px-2 border-15"
+          [ngClass]="
+            activeFilters.includes(priceHeaderFilters.BUS)
+              ? 'bg-green-secondary'
+              : 'bg-white'
+          "
+          (click)="onClickFilter(priceHeaderFilters.BUS)">
           <img
             class="mt-0-5"
-            ngSrc="assets/transports/bus.svg"
+            [ngSrc]="
+              activeFilters.includes(priceHeaderFilters.BUS)
+                ? 'assets/transports/bus-white.svg'
+                : 'assets/transports/bus.svg'
+            "
             alt="Bus"
             height="25"
             width="25" />
         </div>
-        <div class="py-1 px-2 border-15 bg-white">
+        <div
+          class="py-1 px-2 border-15"
+          [ngClass]="
+            activeFilters.includes(priceHeaderFilters.BIKE)
+              ? 'bg-green-secondary'
+              : 'bg-white'
+          "
+          (click)="onClickFilter(priceHeaderFilters.BIKE)">
           <img
-            ngSrc="assets/transports/bike.svg"
+            [ngSrc]="
+              activeFilters.includes(priceHeaderFilters.BIKE)
+                ? 'assets/transports/bike-white.svg'
+                : 'assets/transports/bike.svg'
+            "
             alt="Bike"
             height="27"
             width="27" />
@@ -80,4 +129,37 @@
       </div>
     </form>
   </div>
+</div>
+
+<div class="flex flex-column justify-content-between p-3 gap-3">
+  @if (departureValue && arrivalValue && searchItems.length) {
+    <div class="flex flex-column" *ngFor="let day of searchItems">
+      <span class="text-xl font-medium mb-1">{{ day.date }}</span>
+      <div class="flex flex-column" *ngFor="let item of day.items">
+        <div
+          class="flex flex-row justify-content-between align-items-center card-border-price my-1-5"
+          (click)="onClickItem()">
+          <span>
+            {{ item.departureInfo.time }}
+            &#x2192;
+            {{ item.arrivalInfo.time }}
+          </span>
+          <img
+            [ngSrc]="'assets/transports/' + item.transport + '.svg'"
+            [alt]="item.transport"
+            width="20"
+            height="20" />
+
+          <span class="text-green text-xxs font-semibold mt-0-5">
+            {{ item.carbonImpact | number: '1.2-2' }} kg de CO<sub>2</sub>
+          </span>
+
+          <span>{{ item.price }}€</span>
+        </div>
+      </div>
+    </div>
+  } @else if (departureValue && arrivalValue) {
+  } @else {
+    <span class="text-lg my-10 align-self-center">Aucun résultat</span>
+  }
 </div>

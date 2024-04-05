@@ -79,6 +79,11 @@ input:focus {
     margin-bottom: 0.35rem;
 }
 
+.my-10 {
+    margin-top: 7rem !important;
+    margin-bottom: 7rem !important;
+}
+
 .mt-1-px {
     margin-top: 6px
 }
@@ -95,6 +100,14 @@ input:focus {
 
 .text-green {
     color: #447B5D;
+}
+
+.bg-green-secondary {
+    background-color: #678D3E;
+}
+
+.text-green-secondary {
+    color: #678D3E;
 }
 
 .background-red {
@@ -122,6 +135,13 @@ input:focus {
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
     padding: 13px 10px 13px 20px;
 }
+
+.card-border-price {
+    border-radius: 14px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+    padding: 13px 15px 13px 15px;
+}
+
 
 
 /*  BUTTON  */
