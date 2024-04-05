@@ -1,7 +1,7 @@
 <div class="py-4 sticky top-0 background-green">
   <div
-    class="w-full flex flex-column justify-content-center align-items-center mt-5">
-    <div class="text-white text-2xl">Comparez les meilleurs prix !</div>
+    class="w-full flex flex-column justify-content-center align-items-center mt-4">
+    <div class="text-white text-xl">Comparez les meilleurs prix !</div>
     <form [formGroup]="searchForm" class="w-11 mt-3 flex flex-column gap-3">
       <green-input
         [placeholder]="'Paris...'"
@@ -43,22 +43,39 @@
       <div
         class="flex flex-row gap-1 align-items-center font-semibold w-full justify-content-between">
         <div
-          class="flex flex-row align-items-center py-2 px-3 border-15 bg-white gap-2">
+          class="flex flex-row align-items-center py-2 px-2 border-15 bg-white gap-2">
           Prix
-          <img src="assets/icons/arrow/arrow-bottom.svg" alt="Bottom arrow" />
+          <img
+            ngSrc="assets/icons/arrow/arrow-bottom.svg"
+            alt="Bottom arrow"
+            height="17"
+            width="16" />
         </div>
         <div
           class="flex flex-row align-items-center py-2 px-3 border-15 bg-white gap-2">
           Plus court
         </div>
         <div class="py-1 px-2 border-15 bg-white">
-          <img src="assets/transports/train.svg" alt="Train" />
+          <img
+            ngSrc="assets/transports/train.svg"
+            alt="Train"
+            height="25"
+            width="25" />
         </div>
         <div class="py-1 px-2 border-15 bg-white">
-          <img class="mt-0-5" src="assets/transports/bus.svg" alt="Train" />
+          <img
+            class="mt-0-5"
+            ngSrc="assets/transports/bus.svg"
+            alt="Bus"
+            height="25"
+            width="25" />
         </div>
         <div class="py-1 px-2 border-15 bg-white">
-          <img src="assets/transports/bike.svg" alt="Train" />
+          <img
+            ngSrc="assets/transports/bike.svg"
+            alt="Bike"
+            height="27"
+            width="27" />
         </div>
       </div>
     </form>

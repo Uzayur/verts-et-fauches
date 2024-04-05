@@ -3,7 +3,7 @@
   <div
     *ngFor="let tab of footerTabs"
     [ngClass]="{ 'active-tab': true, active: isActiveTab(tab) }"
-    class="mt-4 mb-5"
+    class="mt-4 mb-4"
     (click)="onItemClick(tab)">
     <span
       [class]="tab.icon + ' mb-2'"

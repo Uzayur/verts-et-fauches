@@ -69,6 +69,11 @@ input:focus {
     margin-top: 0.15rem;
 }
 
+.my-0-5 {
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
+}
+
 .my-1-5 {
     margin-top: 0.35rem;
     margin-bottom: 0.35rem;
@@ -115,28 +120,30 @@ input:focus {
 .card-border {
     border-radius: 14px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
-    padding: 15px 10px 15px 20px;
+    padding: 13px 10px 13px 20px;
 }
 
 
 /*  BUTTON  */
 .btn-primary {
     border-radius: 12px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
-    padding: 10px 20px;
+    padding: 10px 25px;
     color: white;
     background-color: #678D3E;
+    letter-spacing: 0.6px;
     border: none;
 }
 
 .btn-secondary {
     border-radius: 12px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
-    padding: 10px 20px;
+    padding: 10px 25px;
     color: white;
     background-color: #8B5A49;
+    letter-spacing: 0.6px;
     border: none;
 }
 
