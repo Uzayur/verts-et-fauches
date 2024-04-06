@@ -1,4 +1,4 @@
-export enum PriceSortFilter {
+export enum PriceSortFilters {
   PRICE = 'price',
   SHORTEST = 'shortest',
 }

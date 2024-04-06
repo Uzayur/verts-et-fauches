@@ -1,5 +1,5 @@
 /* eslint-disable max-lines */
-import { TransportEnum } from '~/app/shared/types/enum/transport.enum';
+import { PriceTransportFilters } from '~/app/shared/types/enum/price/price-transport-filter.enum';
 import { ItemPrice } from '~/app/shared/types/items/item-price.type';
 
 export const itemsPrice: ItemPrice[] = [
@@ -7,7 +7,7 @@ export const itemsPrice: ItemPrice[] = [
     date: '29 juin 2024',
     items: [
       {
-        transport: TransportEnum.TRAIN,
+        transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 57,
         departureInfo: {
@@ -24,7 +24,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.BIKE,
+        transport: PriceTransportFilters.BIKE,
         carbonImpact: 0,
         price: 0,
         departureInfo: {
@@ -41,7 +41,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.TRAIN,
+        transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 68,
         departureInfo: {
@@ -58,7 +58,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.BUS,
+        transport: PriceTransportFilters.BUS,
         carbonImpact: 6.43,
         price: 23,
         departureInfo: {
@@ -75,7 +75,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.VAN,
+        transport: 'van',
         carbonImpact: 80.02,
         price: 12,
         departureInfo: {
@@ -92,7 +92,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.TRAIN,
+        transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.71,
         price: 76,
         departureInfo: {
@@ -110,7 +110,7 @@ export const itemsPrice: ItemPrice[] = [
       },
 
       {
-        transport: TransportEnum.TRAIN,
+        transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 38,
         arrivalInfo: {
@@ -127,7 +127,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.BIKE,
+        transport: PriceTransportFilters.BIKE,
         carbonImpact: 0,
         price: 0,
         arrivalInfo: {
@@ -144,7 +144,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.TRAIN,
+        transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 59,
         arrivalInfo: {
@@ -161,7 +161,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.BUS,
+        transport: PriceTransportFilters.BUS,
         carbonImpact: 6.43,
         price: 26,
         arrivalInfo: {
@@ -178,7 +178,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.VAN,
+        transport: 'van',
         carbonImpact: 75.02,
         price: 12,
         arrivalInfo: {
@@ -195,7 +195,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.TRAIN,
+        transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.76,
         price: 73,
         arrivalInfo: {
@@ -217,7 +217,7 @@ export const itemsPrice: ItemPrice[] = [
     date: '30 juin 2024',
     items: [
       {
-        transport: TransportEnum.TRAIN,
+        transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 57,
         departureInfo: {
@@ -234,7 +234,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.BIKE,
+        transport: PriceTransportFilters.BIKE,
         carbonImpact: 0,
         price: 0,
         departureInfo: {
@@ -251,7 +251,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.TRAIN,
+        transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 68,
         departureInfo: {
@@ -268,7 +268,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.BUS,
+        transport: PriceTransportFilters.BUS,
         carbonImpact: 6.43,
         price: 23,
         departureInfo: {
@@ -285,7 +285,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.VAN,
+        transport: 'van',
         carbonImpact: 80.02,
         price: 12,
         departureInfo: {
@@ -302,7 +302,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.TRAIN,
+        transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.71,
         price: 76,
         departureInfo: {
@@ -320,7 +320,7 @@ export const itemsPrice: ItemPrice[] = [
       },
 
       {
-        transport: TransportEnum.TRAIN,
+        transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 38,
         arrivalInfo: {
@@ -337,7 +337,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.BIKE,
+        transport: PriceTransportFilters.BIKE,
         carbonImpact: 0,
         price: 0,
         arrivalInfo: {
@@ -354,7 +354,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.BUS,
+        transport: PriceTransportFilters.BUS,
         carbonImpact: 6.43,
         price: 26,
         arrivalInfo: {
@@ -371,7 +371,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.VAN,
+        transport: 'van',
         carbonImpact: 75.02,
         price: 12,
         arrivalInfo: {
@@ -388,20 +388,20 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
-        transport: TransportEnum.TRAIN,
+        transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.76,
         price: 73,
         arrivalInfo: {
           country: 'France',
           city: 'Paris',
           station: 'Gare de Paris-Nord',
-          time: '20:07',
+          time: '20:04',
         },
         departureInfo: {
           country: 'Belgique',
           city: 'Bruxelles',
           station: 'Gare de Bruxelles-Midi',
-          time: '18:34',
+          time: '18:37',
         },
       },
     ],

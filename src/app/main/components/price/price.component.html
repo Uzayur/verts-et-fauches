@@ -45,15 +45,15 @@
         <div
           class="flex flex-row align-items-center py-2 px-2 border-15 gap-2"
           [ngClass]="
-            activeSortFilter === priceHeaderFilters.PRICE
+            activeSortFilter === priceSortFilters.PRICE
               ? 'bg-green-secondary text-white'
               : 'bg-white'
           "
-          (click)="onClickFilter(priceHeaderFilters.PRICE)">
+          (click)="onClickFilter(priceSortFilters.PRICE)">
           Prix
           <img
             [ngSrc]="
-              activeFilters.includes(priceHeaderFilters.PRICE)
+              activeSortFilter === priceSortFilters.PRICE
                 ? 'assets/icons/arrow/arrow-bottom-white.svg'
                 : 'assets/icons/arrow/arrow-bottom.svg'
             "
@@ -64,24 +64,24 @@
         <div
           class="flex flex-row align-items-center py-2 px-3 border-15 gap-2"
           [ngClass]="
-            activeFilters.includes(priceHeaderFilters.SHORTEST)
+            activeSortFilter === priceSortFilters.SHORTEST
               ? 'bg-green-secondary text-white'
               : 'bg-white'
           "
-          (click)="onClickFilter(priceHeaderFilters.SHORTEST)">
+          (click)="onClickFilter(priceSortFilters.SHORTEST)">
           Plus court
         </div>
         <div
           class="py-1 px-2 border-15"
           [ngClass]="
-            activeFilters.includes(priceHeaderFilters.TRAIN)
+            activeTransportFilter === priceTransportFilters.TRAIN
               ? 'bg-green-secondary'
               : 'bg-white'
           "
-          (click)="onClickFilter(priceHeaderFilters.TRAIN)">
+          (click)="onClickFilter(priceTransportFilters.TRAIN)">
           <img
             [ngSrc]="
-              activeFilters.includes(priceHeaderFilters.TRAIN)
+              activeTransportFilter === priceTransportFilters.TRAIN
                 ? 'assets/transports/train-white.svg'
                 : 'assets/transports/train.svg'
             "
@@ -92,15 +92,15 @@
         <div
           class="py-1 px-2 border-15"
           [ngClass]="
-            activeFilters.includes(priceHeaderFilters.BUS)
+            activeTransportFilter === priceTransportFilters.BUS
               ? 'bg-green-secondary'
               : 'bg-white'
           "
-          (click)="onClickFilter(priceHeaderFilters.BUS)">
+          (click)="onClickFilter(priceTransportFilters.BUS)">
           <img
             class="mt-0-5"
             [ngSrc]="
-              activeFilters.includes(priceHeaderFilters.BUS)
+              activeTransportFilter === priceTransportFilters.BUS
                 ? 'assets/transports/bus-white.svg'
                 : 'assets/transports/bus.svg'
             "
@@ -111,14 +111,14 @@
         <div
           class="py-1 px-2 border-15"
           [ngClass]="
-            activeFilters.includes(priceHeaderFilters.BIKE)
+            activeTransportFilter === priceTransportFilters.BIKE
               ? 'bg-green-secondary'
               : 'bg-white'
           "
-          (click)="onClickFilter(priceHeaderFilters.BIKE)">
+          (click)="onClickFilter(priceTransportFilters.BIKE)">
           <img
             [ngSrc]="
-              activeFilters.includes(priceHeaderFilters.BIKE)
+              activeTransportFilter === priceTransportFilters.BIKE
                 ? 'assets/transports/bike-white.svg'
                 : 'assets/transports/bike.svg'
             "

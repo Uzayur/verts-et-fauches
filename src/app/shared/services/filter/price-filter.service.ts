@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { PriceSortFilter } from '~/app/shared/types/enum/price/price-sort-filters.enum';
-import { PriceTransportFilter } from '~/app/shared/types/enum/price/price-transport-filter.enum';
-import { TransportEnum } from '~/app/shared/types/enum/transport.enum';
+import { PriceSortFilters } from '~/app/shared/types/enum/price/price-sort-filters.enum';
+import { PriceTransportFilters } from '~/app/shared/types/enum/price/price-transport-filter.enum';
 import { ItemPriceTrip } from '~/app/shared/types/items/item-price.type';
 
 @Injectable({
@@ -12,13 +11,14 @@ export class PriceFilterService {
 
   searchByPriceFilters(
     items: ItemPriceTrip[],
-    sortFilter: PriceSortFilter | null,
-    transportFilter: TransportEnum | null
+    sortFilter: PriceSortFilters | null,
+    transportFilter: PriceTransportFilters | null
   ): ItemPriceTrip[] {
+    console.log(transportFilter);
     if (transportFilter)
-      items.filter(item => item.transport === transportFilter);
+      items = items.filter(item => item.transport === transportFilter);
 
-    if (sortFilter === PriceSortFilter.SHORTEST) {
+    if (sortFilter === PriceSortFilters.SHORTEST) {
       items.sort(
         (a, b) =>
           this.calculateTimeDifference(

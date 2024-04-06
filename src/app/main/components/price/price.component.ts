@@ -4,9 +4,8 @@ import { Calendar } from 'primeng/calendar';
 import { itemsPrice } from '~/app/shared/const/item-price/items-price.const';
 import { PriceFilterService } from '~/app/shared/services/filter/price-filter.service';
 import { UtilsService } from '~/app/shared/services/utils/utils.service';
-import { PriceHeaderFilters } from '~/app/shared/types/enum/price/price-header-filters.enum';
-import { PriceSortFilter } from '~/app/shared/types/enum/price/price-sort-filters.enum';
-import { PriceTransportFilter } from '~/app/shared/types/enum/price/price-transport-filter.enum';
+import { PriceSortFilters } from '~/app/shared/types/enum/price/price-sort-filters.enum';
+import { PriceTransportFilters } from '~/app/shared/types/enum/price/price-transport-filter.enum';
 import { ItemPrice } from '~/app/shared/types/items/item-price.type';
 
 @Component({
@@ -19,9 +18,11 @@ export class PriceComponent implements OnInit {
 
   searchForm!: FormGroup;
 
-  priceHeaderFilters = PriceHeaderFilters;
-  activeSortFilter: PriceSortFilter | null = null;
-  activeTransportFilter: PriceTransportFilter | null = null;
+  priceSortFilters = PriceSortFilters;
+  activeSortFilter: PriceSortFilters | null = null;
+
+  priceTransportFilters = PriceTransportFilters;
+  activeTransportFilter: PriceTransportFilters | null = null;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -119,15 +120,15 @@ export class PriceComponent implements OnInit {
     // TODO: add modal open
   }
 
-  onClickFilter(filter: PriceSortFilter | PriceTransportFilter): void {
-    if (Object.values(PriceSortFilter).includes(filter as PriceSortFilter)) {
+  onClickFilter(filter: PriceSortFilters | PriceTransportFilters): void {
+    if (Object.values(PriceSortFilters).includes(filter as PriceSortFilters)) {
       this.activeSortFilter =
-        this.activeSortFilter === filter ? null : (filter as PriceSortFilter);
+        this.activeSortFilter === filter ? null : (filter as PriceSortFilters);
     } else {
       this.activeTransportFilter =
         this.activeTransportFilter === filter
           ? null
-          : (filter as PriceTransportFilter);
+          : (filter as PriceTransportFilters);
     }
   }
 }

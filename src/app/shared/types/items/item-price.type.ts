@@ -1,4 +1,4 @@
-import { TransportEnum } from '~/app/shared/types/enum/transport.enum';
+import { PriceTransportFilters } from '~/app/shared/types/enum/price/price-transport-filter.enum';
 
 export type TravelInfo = {
   country: string;
@@ -8,7 +8,7 @@ export type TravelInfo = {
 };
 
 export type ItemPriceTrip = {
-  transport: TransportEnum;
+  transport: string | PriceTransportFilters;
   carbonImpact: number;
   price: number;
   departureInfo: TravelInfo;

@@ -1,4 +1,4 @@
-export enum PriceTransportFilter {
+export enum PriceTransportFilters {
   TRAIN = 'train',
   BUS = 'bus',
   BIKE = 'bike',
