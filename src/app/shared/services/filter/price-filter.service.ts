@@ -14,7 +14,6 @@ export class PriceFilterService {
     sortFilter: PriceSortFilters | null,
     transportFilter: PriceTransportFilters | null
   ): ItemPriceTrip[] {
-    console.log(transportFilter);
     if (transportFilter)
       items = items.filter(item => item.transport === transportFilter);
 
@@ -27,7 +26,7 @@ export class PriceFilterService {
           ) -
           this.calculateTimeDifference(b.departureInfo.time, b.arrivalInfo.time)
       );
-    } else {
+    } else if (sortFilter === PriceSortFilters.PRICE) {
       items.sort((a, b) => a.price - b.price);
     }
     return items;

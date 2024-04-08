@@ -7,6 +7,7 @@ export const itemsPrice: ItemPrice[] = [
     date: '29 juin 2024',
     items: [
       {
+        date: '29 juin 2024',
         transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 57,
@@ -24,6 +25,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '29 juin 2024',
         transport: PriceTransportFilters.BIKE,
         carbonImpact: 0,
         price: 0,
@@ -41,6 +43,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '29 juin 2024',
         transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 68,
@@ -58,6 +61,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '29 juin 2024',
         transport: PriceTransportFilters.BUS,
         carbonImpact: 6.43,
         price: 23,
@@ -75,6 +79,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '29 juin 2024',
         transport: 'van',
         carbonImpact: 80.02,
         price: 12,
@@ -92,6 +97,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '29 juin 2024',
         transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.71,
         price: 76,
@@ -110,6 +116,7 @@ export const itemsPrice: ItemPrice[] = [
       },
 
       {
+        date: '29 juin 2024',
         transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 38,
@@ -127,6 +134,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '29 juin 2024',
         transport: PriceTransportFilters.BIKE,
         carbonImpact: 0,
         price: 0,
@@ -144,6 +152,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '29 juin 2024',
         transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 59,
@@ -161,6 +170,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '29 juin 2024',
         transport: PriceTransportFilters.BUS,
         carbonImpact: 6.43,
         price: 26,
@@ -178,6 +188,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '29 juin 2024',
         transport: 'van',
         carbonImpact: 75.02,
         price: 12,
@@ -195,6 +206,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '29 juin 2024',
         transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.76,
         price: 73,
@@ -217,6 +229,7 @@ export const itemsPrice: ItemPrice[] = [
     date: '30 juin 2024',
     items: [
       {
+        date: '30 juin 2024',
         transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 57,
@@ -234,6 +247,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '30 juin 2024',
         transport: PriceTransportFilters.BIKE,
         carbonImpact: 0,
         price: 0,
@@ -251,6 +265,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '30 juin 2024',
         transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 68,
@@ -268,6 +283,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '30 juin 2024',
         transport: PriceTransportFilters.BUS,
         carbonImpact: 6.43,
         price: 23,
@@ -285,6 +301,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '30 juin 2024',
         transport: 'van',
         carbonImpact: 80.02,
         price: 12,
@@ -302,6 +319,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '30 juin 2024',
         transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.71,
         price: 76,
@@ -320,6 +338,7 @@ export const itemsPrice: ItemPrice[] = [
       },
 
       {
+        date: '30 juin 2024',
         transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.72,
         price: 38,
@@ -337,6 +356,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '30 juin 2024',
         transport: PriceTransportFilters.BIKE,
         carbonImpact: 0,
         price: 0,
@@ -354,6 +374,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '30 juin 2024',
         transport: PriceTransportFilters.BUS,
         carbonImpact: 6.43,
         price: 26,
@@ -371,6 +392,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '30 juin 2024',
         transport: 'van',
         carbonImpact: 75.02,
         price: 12,
@@ -388,6 +410,7 @@ export const itemsPrice: ItemPrice[] = [
         },
       },
       {
+        date: '30 juin 2024',
         transport: PriceTransportFilters.TRAIN,
         carbonImpact: 0.76,
         price: 73,

@@ -8,6 +8,7 @@ export type TravelInfo = {
 };
 
 export type ItemPriceTrip = {
+  date: string;
   transport: string | PriceTransportFilters;
   carbonImpact: number;
   price: number;

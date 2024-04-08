@@ -1,12 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Calendar } from 'primeng/calendar';
+import { PriceService } from '~/app/main/services/price/price.service';
 import { itemsPrice } from '~/app/shared/const/item-price/items-price.const';
 import { PriceFilterService } from '~/app/shared/services/filter/price-filter.service';
 import { UtilsService } from '~/app/shared/services/utils/utils.service';
 import { PriceSortFilters } from '~/app/shared/types/enum/price/price-sort-filters.enum';
 import { PriceTransportFilters } from '~/app/shared/types/enum/price/price-transport-filter.enum';
-import { ItemPrice } from '~/app/shared/types/items/item-price.type';
+import {
+  ItemPrice,
+  ItemPriceTrip,
+} from '~/app/shared/types/items/item-price.type';
 
 @Component({
   selector: 'app-price',
@@ -27,7 +31,8 @@ export class PriceComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private utils: UtilsService,
-    private filter: PriceFilterService
+    private filter: PriceFilterService,
+    private priceService: PriceService
   ) {}
 
   public get departure(): FormControl {
@@ -116,8 +121,8 @@ export class PriceComponent implements OnInit {
     });
   }
 
-  onClickItem(): void {
-    // TODO: add modal open
+  onClickItem(item: ItemPriceTrip): void {
+    this.priceService.open(item);
   }
 
   onClickFilter(filter: PriceSortFilters | PriceTransportFilters): void {

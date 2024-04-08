@@ -1,0 +1,100 @@
+@if (isOpen$ | async) {
+  @if (selectedTrip$ | async; as selectedTrip) {
+    <div class="w-13 bottom-0 fixed price-modal green-modal">
+      <div>
+        <hr class="modal-hr my-0" (click)="closeModal()" />
+        <div class="flex flex-row justify-content-between align-items-center">
+          <img
+            src="assets/sponsors/hourrail.svg"
+            alt="Hourrail"
+            width="80"
+            height="39" />
+          <span class="text-green text-xs font-semibold mb-2">
+            {{ selectedTrip.carbonImpact | number: '1.2-2' }} kg de CO<sub
+              >2</sub
+            >
+          </span>
+        </div>
+
+        <div class="flex flex-column mt-2-neg">
+          <span
+            class="flex flex-row justify-content-center font-semibold text-green">
+            Aller simple
+          </span>
+          <hr class="text-hr" />
+        </div>
+
+        <div class="flex flex-column">
+          <div class="flex flex-column gap-0-5 mb-2">
+            <span>
+              <span class="font-semibold">Départ : </span>
+              <span>
+                {{ selectedTrip.departureInfo.city }},
+                {{ selectedTrip.departureInfo.country }} -
+                {{ selectedTrip.departureInfo.station }}
+              </span>
+            </span>
+            <span>
+              <span class="font-semibold">Le : </span>
+              <span>
+                {{ selectedTrip.date }} à
+                {{ selectedTrip.departureInfo.time }}
+              </span>
+            </span>
+          </div>
+
+          <div class="flex flex-column gap-0-5 mb-2">
+            <span>
+              <span class="font-semibold">Arrivé : </span>
+              <span>
+                {{ selectedTrip.arrivalInfo.city }},
+                {{ selectedTrip.arrivalInfo.country }} -
+                {{ selectedTrip.arrivalInfo.station }}
+              </span>
+            </span>
+            <span>
+              <span class="font-semibold">Le : </span>
+              <span>
+                {{ selectedTrip.date }} à
+                {{ selectedTrip.arrivalInfo.time }}
+              </span>
+            </span>
+          </div>
+
+          <div class="flex flex-row">
+            <span class="font-semibold">Nombre de voyageurs :</span>
+            <div class="ml-3 flex flex-row justify-content-between w-2-5">
+              <img
+                *ngIf="travelers$ | async as travelers"
+                [class]="travelers === 1 ? 'opacity-60' : null"
+                src="assets/buttons/minus.svg"
+                alt="minus"
+                (click)="travelers !== 1 && decreaseNumber()" />
+              <span>{{ travelers$ | async }}</span>
+              <img
+                src="assets/buttons/plus.svg"
+                alt="minus"
+                (click)="increaseNumber()" />
+            </div>
+          </div>
+
+          <p-divider
+            class="-my-1 w-10 align-self-center text-green z-neg-1"></p-divider>
+
+          <span class="flex flex-row justify-content-between">
+            <span>
+              <span class="font-semibold">Prix : </span>
+              <span>
+                {{ selectedTrip.price * ((travelers$ | async) ?? 1) }}€
+              </span>
+            </span>
+
+            <a (click)="goToPayment()" class="text-green font-semibold">
+              Réserver vos billets
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  }
+}

@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HomeDetailsComponent } from './main/components/home/home-details/home-details/home-details.component';
+import { PriceDetailsComponent } from './main/components/price/component/price-details/price-details.component';
+import { PaymentComponent } from './main/components/price/component/payment/payment.component';
 import { AppRoutingModule } from '~/app/app-routing.module';
 import { AppComponent } from '~/app/app.component';
 import { HomeComponent } from '~/app/main/components/home/home.component';
@@ -23,6 +25,8 @@ import { SharedModule } from '~/app/shared/shared.module';
     ProfileComponent,
     LandingComponent,
     HomeDetailsComponent,
+    PriceDetailsComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
