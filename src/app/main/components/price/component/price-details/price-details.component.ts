@@ -31,12 +31,14 @@ export class PriceDetailsComponent {
     private priceService: PriceService,
     private router: Router
   ) {
+    this.closeModal();
     this.isOpen$ = this.priceService.isOpen;
     this.travelers$ = this.priceService.travelers;
     this.selectedTrip$ = this.priceService.selectedTrip;
   }
 
   goToPayment(): void {
+    this.closeModal();
     void this.router.navigate(['price/payment']);
   }
 
