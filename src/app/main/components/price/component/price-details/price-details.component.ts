@@ -32,9 +32,9 @@ export class PriceDetailsComponent {
     private router: Router
   ) {
     this.closeModal();
-    this.isOpen$ = this.priceService.isOpen;
-    this.travelers$ = this.priceService.travelers;
-    this.selectedTrip$ = this.priceService.selectedTrip;
+    this.isOpen$ = this.priceService.isOpen$;
+    this.travelers$ = this.priceService.travelers$;
+    this.selectedTrip$ = this.priceService.selectedTrip$;
   }
 
   goToPayment(): void {

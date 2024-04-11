@@ -14,6 +14,7 @@ import { FormErrorDirective } from 'src/app/shared/directives/form-error/form-er
 import { FooterComponent } from './components/footer/footer.component';
 import { GreenInputComponent } from './components/inputs/green-input/green-input.component';
 import { LonelyPlanetComponent } from './components/logo/lonely-planet/lonely-planet.component';
+import { GreenSmallInputComponent } from './components/inputs/green-small-input/green-small-input.component';
 import { PrimengModule } from '~/app/primeng/primeng.module';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { PrimengModule } from '~/app/primeng/primeng.module';
     GreenInputComponent,
     FormErrorDirective,
     LonelyPlanetComponent,
+    GreenSmallInputComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -49,6 +51,7 @@ import { PrimengModule } from '~/app/primeng/primeng.module';
     GreenInputComponent,
     FormErrorDirective,
     LonelyPlanetComponent,
+    GreenSmallInputComponent,
   ],
 })
 export class SharedModule {}

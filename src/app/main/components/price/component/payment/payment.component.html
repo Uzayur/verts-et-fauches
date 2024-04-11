@@ -1,1 +1,182 @@
-<p>payment works!</p>
+<div
+  class="flex flex-column overflow-y-hidden"
+  *ngIf="selectedTrip$ | async as selectedTrip">
+  <div
+    class="py-4 background-green text-white text-xl flex flex-row justify-content-center">
+    Effectuez votre réservation !
+  </div>
+
+  <div class="px-3 pt-3">
+    <div class="flex flex-column gap-1">
+      <span class="font-semibold"> Résumé de votre réservation : </span>
+
+      <div class="card-border-price my-1 flex flex-row justify-content-between">
+        <div class="flex flex-column gap-2-5">
+          <div class="flex flex-column gap-1">
+            <span class="flex flex-row align-items-center text-sm">
+              <span class="font-semibold mr-2">
+                {{ selectedTrip.date.substring(0, 7) }} :
+              </span>
+              {{ selectedTrip.departureInfo.time }}
+              <img
+                class="mb-0-5 mx-1"
+                src="assets/icons/arrow/large-arrow-right.svg"
+                alt="Right arrow"
+                width="15" />
+              {{ selectedTrip.arrivalInfo.time }}
+              <img
+                class="ml-3"
+                [ngSrc]="'assets/transports/' + selectedTrip.transport + '.svg'"
+                [alt]="selectedTrip.transport"
+                width="20"
+                height="18" />
+            </span>
+
+            <span>
+              {{ selectedTrip.departureInfo.city }}
+              <img
+                class="mx-1 mb-0-5"
+                src="assets/icons/arrow/large-arrow-right.svg"
+                alt="Right arrow"
+                width="15" />
+              {{ selectedTrip.arrivalInfo.city }}
+            </span>
+          </div>
+
+          <div class="flex flex-column gap-1">
+            <span class="flex flex-row align-items-center text-sm">
+              <span class="font-semibold mr-2"> 02 juil. : </span>
+              12:56
+              <img
+                class="mb-0-5 mx-1"
+                src="assets/icons/arrow/large-arrow-right.svg"
+                alt="Right arrow"
+                width="15" />
+              14:29
+              <img
+                class="ml-3"
+                [ngSrc]="'assets/transports/' + selectedTrip.transport + '.svg'"
+                [alt]="selectedTrip.transport"
+                width="20"
+                height="18" />
+            </span>
+            <span>
+              {{ selectedTrip.arrivalInfo.city }}
+              <img
+                class="mx-1 mb-0-5"
+                src="assets/icons/arrow/large-arrow-right.svg"
+                alt="Right arrow"
+                width="15" />
+              {{ selectedTrip.departureInfo.city }}
+            </span>
+          </div>
+        </div>
+
+        <div class="flex flex-column justify-content-between">
+          <div
+            class="flex flex-column gap-2 flex-1"
+            [ngClass]="
+              selectedTrip.transport !== 'train'
+                ? 'justify-content-center'
+                : null
+            ">
+            <span
+              *ngIf="selectedTrip.transport === 'train'"
+              class="flex flex-row justify-content-end">
+              <img
+                src="assets/sponsors/hourrail.svg"
+                alt="Hourrail"
+                width="65" />
+            </span>
+            <div
+              class="flex flex-row align-items-center justify-content-center gap-0-5 mb-2"
+              *ngIf="travelers$ | async as travelers">
+              <img src="assets/icons/profile.svg" alt="Profile" height="25" />
+              <span class="font-semibold text-sm">x{{ travelers }}</span>
+            </div>
+          </div>
+          <span class="font-semibold text-green text-xs">
+            {{ selectedTrip.carbonImpact | number: '1.2-2' }} kg de CO<sub
+              >2</sub
+            >
+          </span>
+        </div>
+      </div>
+
+      <div class="flex flex-row justify-content-between">
+        <span class="font-semibold"> Montant total :</span>
+        <span>{{ selectedTrip.price }}€</span>
+      </div>
+
+      <p-divider
+        class="-my-2-5 w-10 align-self-center text-green z-neg-1"></p-divider>
+
+      <div class="font-semibold mb-1">Modes de paiement :</div>
+
+      <div
+        class="flex flex-row justify-content-between align-items-center mb-1">
+        <div class="card-border-payment">
+          <img src="assets/sponsors/paypal.svg" alt="Paypal" height="25" />
+        </div>
+
+        <div class="card-border-payment flex flex-row align-items-center gap-3">
+          <img src="assets/sponsors/cb.svg" alt="Cb" height="26" />
+          <img
+            src="assets/icons/divider/vertical.svg"
+            alt="Divider"
+            height="18" />
+          <img
+            class="-ml-1"
+            src="assets/sponsors/visa.svg"
+            alt="Visa"
+            height="21" />
+        </div>
+      </div>
+
+      <div class="card-border-price my-0-5 flex flex-column gap-2 h-full">
+        <form [formGroup]="visa" class="flex flex-column gap-2">
+          <green-small-input
+            [title]="'Nom du titulaire de la carte :'"
+            [placeholder]="'Nom prénom...'"
+            [disableErrors]="true"
+            [formControl]="visaName"
+            [formControlName]="'name'"></green-small-input>
+
+          <green-small-input
+            [title]="'Numéro de carte bancaire :'"
+            [placeholder]="'Numéro de carte...'"
+            [disableErrors]="true"
+            [formControl]="visaCardNumber"
+            [formControlName]="'cardNumber'"></green-small-input>
+
+          <div class="flex flex-row gap-3">
+            <green-small-input
+              class="w-6"
+              [title]="'Date d\'expiration :'"
+              [disableErrors]="true"
+              [placeholder]="'09/24'"
+              [formControl]="visaExpirationDate"
+              [formControlName]="'expirationDate'"></green-small-input>
+
+            <green-small-input
+              class="w-6"
+              [title]="'Code de sécurité :'"
+              [disableErrors]="true"
+              [placeholder]="'137'"
+              [formControl]="visaSecurityCode"
+              [formControlName]="'securityCode'"></green-small-input>
+          </div>
+        </form>
+
+        <div class="flex flex-row justify-content-between">
+          <button class="btn-tertiary-small" (click)="cancelPayment()">
+            Annuler
+          </button>
+          <button class="btn-primary-small" (click)="confirmPayment()">
+            Valider et payer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

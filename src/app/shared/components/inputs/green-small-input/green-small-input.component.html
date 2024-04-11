@@ -1,0 +1,19 @@
+<div class="flex flex-column gap-2">
+  <span *ngIf="title" class="font-semibold text-sm">{{ title }}</span>
+  <div class="small-input-border">
+    <input
+      type="text"
+      class="border-15 text-sm h-2rem w-full"
+      pInputText
+      [id]="formControlName"
+      [placeholder]="placeholder"
+      [formControl]="formControl"
+      [appFormError]="formControlName"
+      (formError)="onFormError($event)"
+      [isSubmitted]="isSubmitted" />
+
+    <div *ngIf="error && !disableErrors" class="absolute text-xs text-red mt-2">
+      {{ error }}
+    </div>
+  </div>
+</div>

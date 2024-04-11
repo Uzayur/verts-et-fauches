@@ -14,6 +14,7 @@ import { PriceComponent } from '~/app/main/components/price/price.component';
 import { ProfileComponent } from '~/app/main/components/profile/profile.component';
 import { TravelComponent } from '~/app/main/components/travel/travel.component';
 import { SharedModule } from '~/app/shared/shared.module';
+import { ConfirmPaymentComponent } from './main/components/price/component/confirm-payment/confirm-payment.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SharedModule } from '~/app/shared/shared.module';
     HomeDetailsComponent,
     PriceDetailsComponent,
     PaymentComponent,
+    ConfirmPaymentComponent,
   ],
   imports: [
     BrowserModule,
