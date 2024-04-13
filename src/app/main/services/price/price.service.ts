@@ -11,24 +11,8 @@ export class PriceService {
   travelers$: Observable<number>;
   isOpen$: Observable<boolean>;
 
-  private selectedTripSubject = new BehaviorSubject<ItemPriceTrip | null>({
-    date: '29 juin 2024',
-    transport: PriceTransportFilters.TRAIN,
-    carbonImpact: 0.72,
-    price: 68,
-    departureInfo: {
-      country: 'France',
-      city: 'Paris',
-      station: 'Gare de Paris-Nord',
-      time: '09:34',
-    },
-    arrivalInfo: {
-      country: 'Belgique',
-      city: 'Bruxelles',
-      station: 'Gare de Bruxelles-Midi',
-      time: '11:07',
-    },
-  });
+  // TODO: remove mocked data
+  private selectedTripSubject = new BehaviorSubject<ItemPriceTrip | null>(null);
   private traverlersSubject = new BehaviorSubject<number>(1);
   private isOpenSubject = new BehaviorSubject<boolean>(false);
 

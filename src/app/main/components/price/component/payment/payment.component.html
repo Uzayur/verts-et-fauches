@@ -115,11 +115,21 @@
 
       <div
         class="flex flex-row justify-content-between align-items-center mb-1">
-        <div class="card-border-payment">
+        <div
+          class="card-border-payment"
+          (click)="clickPaymentMethod(paymentMethods.PAYPAL)"
+          [ngClass]="
+            paymentMethod === paymentMethods.PAYPAL ? null : 'opacity-60'
+          ">
           <img src="assets/sponsors/paypal.svg" alt="Paypal" height="25" />
         </div>
 
-        <div class="card-border-payment flex flex-row align-items-center gap-3">
+        <div
+          class="card-border-payment flex flex-row align-items-center gap-3"
+          (click)="clickPaymentMethod(paymentMethods.VISA)"
+          [ngClass]="
+            paymentMethod === paymentMethods.VISA ? null : 'opacity-60'
+          ">
           <img src="assets/sponsors/cb.svg" alt="Cb" height="26" />
           <img
             src="assets/icons/divider/vertical.svg"
@@ -133,8 +143,11 @@
         </div>
       </div>
 
-      <div class="card-border-price my-0-5 flex flex-column gap-2 h-full">
-        <form [formGroup]="visa" class="flex flex-column gap-2">
+      <div class="card-border-price my-0-5 flex flex-column gap-2 h-full opaci">
+        <form
+          [formGroup]="visa"
+          class="flex flex-column gap-2"
+          *ngIf="paymentMethod === paymentMethods.VISA">
           <green-small-input
             [title]="'Nom du titulaire de la carte :'"
             [placeholder]="'Nom prénom...'"
@@ -143,6 +156,7 @@
             [formControlName]="'name'"></green-small-input>
 
           <green-small-input
+            [type]="'password'"
             [title]="'Numéro de carte bancaire :'"
             [placeholder]="'Numéro de carte...'"
             [disableErrors]="true"
@@ -168,7 +182,27 @@
           </div>
         </form>
 
-        <div class="flex flex-row justify-content-between">
+        <form
+          [formGroup]="paypal"
+          class="flex flex-column gap-2"
+          *ngIf="paymentMethod === paymentMethods.PAYPAL">
+          <green-small-input
+            [title]="'Email :'"
+            [placeholder]="'votre.email@email.fr'"
+            [disableErrors]="true"
+            [formControl]="paypalEmail"
+            [formControlName]="'email'"></green-small-input>
+
+          <green-small-input
+            [type]="'password'"
+            [title]="'Mot de passe :'"
+            [placeholder]="'**********'"
+            [disableErrors]="true"
+            [formControl]="paypalPassword"
+            [formControlName]="'password'"></green-small-input>
+        </form>
+
+        <div class="flex flex-row justify-content-between mt-1">
           <button class="btn-tertiary-small" (click)="cancelPayment()">
             Annuler
           </button>

@@ -2,7 +2,7 @@
   <span *ngIf="title" class="font-semibold text-sm">{{ title }}</span>
   <div class="small-input-border">
     <input
-      type="text"
+      [type]="type"
       class="border-15 text-sm h-2rem w-full"
       pInputText
       [id]="formControlName"

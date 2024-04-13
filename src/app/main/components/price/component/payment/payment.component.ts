@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
@@ -5,11 +6,11 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { PriceService } from '~/app/main/services/price/price.service';
 import { paymentDate } from '~/app/shared/const/regex/payment-date.regex';
+import { PaymentMethod } from '~/app/shared/types/enum/price/payment-method.enum';
 import { PriceSortFilters } from '~/app/shared/types/enum/price/price-sort-filters.enum';
 import { PriceTransportFilters } from '~/app/shared/types/enum/price/price-transport-filter.enum';
 import { ItemPriceTrip } from '~/app/shared/types/items/item-price.type';
@@ -27,6 +28,9 @@ export class PaymentComponent implements OnInit {
   priceSortFilters = PriceSortFilters;
 
   paymentForm!: FormGroup;
+
+  paymentMethods = PaymentMethod;
+  paymentMethod: PaymentMethod = PaymentMethod.VISA;
 
   constructor(
     private priceService: PriceService,
@@ -58,13 +62,28 @@ export class PaymentComponent implements OnInit {
     return this.paymentForm.get('visa')?.get('securityCode') as FormControl;
   }
 
+  public get paypal(): FormGroup {
+    return this.paymentForm.get('paypal') as FormGroup;
+  }
+
+  public get paypalEmail(): FormControl {
+    return this.paypal.get('email') as FormControl;
+  }
+
+  public get paypalPassword(): FormControl {
+    return this.paypal.get('password') as FormControl;
+  }
+
   ngOnInit(): void {
     this.initForm();
   }
 
   initForm(): void {
     this.paymentForm = this.formBuilder.group({
-      paypal: this.formBuilder.group({}),
+      paypal: this.formBuilder.group({
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required]],
+      }),
       visa: this.formBuilder.group({
         name: [
           '',
@@ -96,6 +115,10 @@ export class PaymentComponent implements OnInit {
         ],
       }),
     });
+  }
+
+  clickPaymentMethod(type: PaymentMethod): void {
+    this.paymentMethod = type;
   }
 
   cancelPayment(): void {
