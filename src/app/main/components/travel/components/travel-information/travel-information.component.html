@@ -1,1 +1,101 @@
-<p>travel-information works!</p>
+<div
+  class="sticky top-0 py-3 px-2 background-green text-white text-xl flex flex-row">
+  <img
+    src="assets/icons/arrow/arrow-left.svg"
+    alt="Back arrow"
+    width="38"
+    (click)="onClickBackArrow()" />
+  <span class="ml-3 font-semibold align-self-center">Musée des Lumières</span>
+</div>
+
+<div class="px-3 pt-3 flex flex-column gap-1">
+  <div class="flex flex-row gap-2 align-items-center">
+    <img
+      ngSrc="assets/travel/institut.png"
+      width="160"
+      height="125"
+      alt="Institut" />
+
+    <div class="flex flex-column gap-1-5 text-xs">
+      <div>
+        <span class="font-semibold">Adresse : </span>25 rue du Premier - Film BP
+        8051 69352 - Lyon Cedex 08
+      </div>
+      <div><span class="font-semibold">Téléphone : </span>04 78 78 18 95</div>
+      <div>
+        <span class="font-semibold">Horaires d'ouverture :</span><br />
+        <span>Du mardi au dimanche de 10h à 18h</span>
+      </div>
+    </div>
+  </div>
+
+  <p-divider
+    class="-my-1-5 w-10 align-self-center text-green z-neg-1"></p-divider>
+
+  <div class="flex flex-column gap-1 -mt-1">
+    <span class="font-semibold text-lg">Description</span>
+    <span class="text-justify text-sm line-height-2">
+      Le Musée des Lumières à Lyon célèbre l'héritage lumineux de la ville à
+      travers des installations interactives et des expositions. Explorez
+      l'évolution de la lumière à Lyon, de l'invention des réverbères à la
+      célèbre Fête des Lumières. Une expérience immersive au cœur de la ville
+      des lumières.
+    </span>
+  </div>
+
+  <p-divider
+    class="-my-1-5 w-10 align-self-center text-green z-neg-1 pb-1"></p-divider>
+
+  <div class="flex flex-column gap-1 -mt-1">
+    <span class="font-semibold text-lg">Tarifs</span>
+    <div class="text-justify text-sm line-height-2">
+      <span class="font-medium">Normal : </span>9€<br />
+
+      <span class="font-medium">Réduit : </span>7,50€ (-18 ans, +60 ans,
+      demandeurs d’emploi, étudiants, enseignants, carte culture et
+      handicapés)<br />
+
+      <span class="font-medium">
+        Groupes (7 personnes min.) / familles nombreuses (3 enfants ou plus) : </span
+      >6,50€<br />
+
+      <span class="font-medium">Gratuit : </span>-7 ans, Club Lumière, Carte de
+      Presse, Lyon City Card, Pass’Région
+    </div>
+  </div>
+
+  <p-divider
+    class="-my-1-5 w-10 align-self-center text-green z-neg-1 pb-1"></p-divider>
+
+  <div class="flex flex-column gap-2-5 mb-3">
+    @for (comment of travelComments; track comment.user) {
+      <div class="card-border-price flex flex-column gap-2">
+        <div class="flex flex-row justify-content-between">
+          <div class="flex flex-row align-items-center">
+            <img
+              class="mr-1"
+              src="assets/icons/profile.svg"
+              alt="Profile logo"
+              width="20" />
+            <span>
+              {{ comment.user }},
+              <span class="text-xxs">le {{ comment.date }}</span>
+            </span>
+          </div>
+
+          <div class="flex flex-row font-semibold">
+            <img
+              class="mr-2"
+              src="assets/icons/premium.svg"
+              alt="Premium logo" />
+            {{ comment.grade }}/5
+          </div>
+        </div>
+
+        <span class="text-justify text-sm">
+          {{ comment.content }}
+        </span>
+      </div>
+    }
+  </div>
+</div>

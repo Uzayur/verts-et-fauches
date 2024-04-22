@@ -115,6 +115,11 @@ input:focus {
     margin-top: -20px;
 }
 
+.-my-1-5 {
+    margin-top: -0.37rem;
+    margin-bottom: -0.37rem;
+}
+
 .-my-2-5 {
     margin-top: -0.75rem;
     margin-bottom: -0.75rem;
@@ -122,6 +127,10 @@ input:focus {
 
 .gap-0-5 {
     gap: 0.12rem
+}
+
+.gap-1-5 {
+    gap: 0.37rem
 }
 
 .gap-2-5 {
@@ -152,6 +161,10 @@ input:focus {
 
 .text-red {
     color: red;
+}
+
+.text-gray {
+    color: #4F5358
 }
 
 
