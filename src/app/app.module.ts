@@ -2,19 +2,21 @@ import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { HomeDetailsComponent } from './main/components/home/home-details/home-details/home-details.component';
-import { PriceDetailsComponent } from './main/components/price/component/price-details/price-details.component';
-import { PaymentComponent } from './main/components/price/component/payment/payment.component';
 import { AppRoutingModule } from '~/app/app-routing.module';
 import { AppComponent } from '~/app/app.component';
+import { HomeDetailsComponent } from '~/app/main/components/home/home-details/home-details/home-details.component';
 import { HomeComponent } from '~/app/main/components/home/home.component';
 import { LandingComponent } from '~/app/main/components/landing/landing.component';
 import { LocationComponent } from '~/app/main/components/location/location.component';
+import { ConfirmPaymentComponent } from '~/app/main/components/price/component/confirm-payment/confirm-payment.component';
+import { PaymentComponent } from '~/app/main/components/price/component/payment/payment.component';
+import { PriceDetailsComponent } from '~/app/main/components/price/component/price-details/price-details.component';
 import { PriceComponent } from '~/app/main/components/price/price.component';
 import { ProfileComponent } from '~/app/main/components/profile/profile.component';
+import { TravelDetailsComponent } from '~/app/main/components/travel/components/travel-details/travel-details.component';
 import { TravelComponent } from '~/app/main/components/travel/travel.component';
 import { SharedModule } from '~/app/shared/shared.module';
-import { ConfirmPaymentComponent } from './main/components/price/component/confirm-payment/confirm-payment.component';
+import { TravelInformationComponent } from './main/components/travel/components/travel-information/travel-information.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ConfirmPaymentComponent } from './main/components/price/component/confi
     PriceDetailsComponent,
     PaymentComponent,
     ConfirmPaymentComponent,
+    TravelDetailsComponent,
+    TravelInformationComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { PriceTransportFilters } from '~/app/shared/types/enum/price/price-transport-filter.enum';
 import { ItemPriceTrip } from '~/app/shared/types/items/item-price.type';
 
 @Injectable({
@@ -11,7 +10,6 @@ export class PriceService {
   travelers$: Observable<number>;
   isOpen$: Observable<boolean>;
 
-  // TODO: remove mocked data
   private selectedTripSubject = new BehaviorSubject<ItemPriceTrip | null>(null);
   private traverlersSubject = new BehaviorSubject<number>(1);
   private isOpenSubject = new BehaviorSubject<boolean>(false);
@@ -20,10 +18,6 @@ export class PriceService {
     this.selectedTrip$ = this.selectedTripSubject.asObservable();
     this.travelers$ = this.traverlersSubject.asObservable();
     this.isOpen$ = this.isOpenSubject.asObservable();
-  }
-
-  public get selectedTrip(): ItemPriceTrip | null {
-    return this.selectedTripSubject.value;
   }
 
   open(item: ItemPriceTrip): void {
