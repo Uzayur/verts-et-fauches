@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { TravelService } from '~/app/main/services/travel/travel.service';
 
 @Component({
-  selector: 'app-travel-details',
-  templateUrl: './travel-details.component.html',
-  styleUrl: './travel-details.component.css',
+  selector: 'app-location-details',
+  templateUrl: './location-details.component.html',
+  styleUrl: './location-details.component.css',
 })
-export class TravelDetailsComponent {
+export class LocationDetailsComponent {
   isOpen$: Observable<boolean>;
 
   constructor(
@@ -19,7 +19,7 @@ export class TravelDetailsComponent {
   }
 
   onClickInformation(): void {
-    void this.router.navigate(['/travel/info']);
+    void this.router.navigate(['/location/info']);
   }
 
   closeModal(): void {

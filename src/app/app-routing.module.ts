@@ -8,7 +8,7 @@ import { ConfirmPaymentComponent } from '~/app/main/components/price/component/c
 import { PaymentComponent } from '~/app/main/components/price/component/payment/payment.component';
 import { PriceComponent } from '~/app/main/components/price/price.component';
 import { ProfileComponent } from '~/app/main/components/profile/profile.component';
-import { TravelInformationComponent } from '~/app/main/components/travel/components/travel-information/travel-information.component';
+import { LocationInformationComponent } from '~/app/main/components/location/components/location-information/location-information.component';
 import { TravelComponent } from '~/app/main/components/travel/travel.component';
 
 const routes: Routes = [
@@ -43,14 +43,14 @@ const routes: Routes = [
     path: 'travel',
     component: TravelComponent,
   },
-  {
-    path: 'travel/info',
-    component: TravelInformationComponent,
-  },
 
   {
     path: 'location',
     component: LocationComponent,
+  },
+  {
+    path: 'location/info',
+    component: LocationInformationComponent,
   },
 
   {
