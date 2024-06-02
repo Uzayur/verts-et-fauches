@@ -1,1 +1,132 @@
-<p>profile-settings works!</p>
+<div
+  class="sticky top-0 py-3 px-2 background-green text-white flex flex-column">
+  <div class="flex flex-row text-xl">
+    <img
+      src="assets/icons/arrow/arrow-left.svg"
+      alt="Back arrow"
+      width="38"
+      (click)="onClickBackArrow()" />
+    <span class="ml-3 font-semibold align-self-center">Paramètres</span>
+  </div>
+
+  <div
+    class="flex flex-row gap-5 justify-content-between mt-3 align-self-center">
+    <img
+      class="border-circle"
+      ngSrc="assets/profile/sammy.png"
+      width="85"
+      height="85"
+      alt="profile picture"
+      priority />
+
+    <div class="flex flex-column justify-content-around gap-1">
+      <div class="flex flex-column gap-2">
+        <span class="text-lg">Sammy Abel</span>
+        <span class="text-lg">30 ans</span>
+      </div>
+      <span class="text-sm">Membre depuis janvier 2024</span>
+    </div>
+  </div>
+</div>
+
+<div class="px-3 pt-2 pb-4 flex flex-column gap-1">
+  <div
+    class="flex flex-row justify-content-between align-items-center card-border my-1-5"
+    (click)="navigate('/profile/travels')">
+    <span>Mes voyages</span>
+    <img
+      ngSrc="assets/icons/arrow/arrow-right.svg"
+      alt="Arrow right"
+      width="20"
+      height="20" />
+  </div>
+
+  <div
+    class="flex flex-row justify-content-between align-items-center card-border my-1-5">
+    <span>Qu'est-ce que l'empreinte carbone ?</span>
+    <img
+      ngSrc="assets/icons/arrow/arrow-right.svg"
+      alt="Arrow right"
+      width="20"
+      height="20" />
+  </div>
+
+  <div
+    class="flex flex-row justify-content-between align-items-center card-border my-1-5"
+    (click)="navigate('profile/carbon-footprint')">
+    <span>Mon empreinte carbone</span>
+    <img
+      ngSrc="assets/icons/arrow/arrow-right.svg"
+      alt="Arrow right"
+      width="20"
+      height="20" />
+  </div>
+
+  <div
+    class="flex flex-row justify-content-between align-items-center card-border my-1-5"
+    (click)="openLonelyPlanetStore()">
+    <span>Boutique Lonely Planet</span>
+    <img
+      ngSrc="assets/icons/arrow/arrow-right.svg"
+      alt="Arrow right"
+      width="20"
+      height="20" />
+  </div>
+
+  <div
+    class="flex flex-row justify-content-between align-items-center card-border my-1-5">
+    <span>Devenir membre Premium</span>
+    <img
+      ngSrc="assets/icons/arrow/arrow-right.svg"
+      alt="Arrow right"
+      width="20"
+      height="20" />
+  </div>
+
+  <div
+    class="flex flex-row justify-content-between align-items-center card-border my-1-5"
+    (click)="navigate('profile/partners')">
+    <span>Nos partenaires</span>
+    <img
+      ngSrc="assets/icons/arrow/arrow-right.svg"
+      alt="Arrow right"
+      width="20"
+      height="20" />
+  </div>
+
+  <div
+    class="flex flex-row justify-content-between align-items-center card-border my-1-5">
+    <span>Informations personnelles</span>
+    <img
+      ngSrc="assets/icons/arrow/arrow-right.svg"
+      alt="Arrow right"
+      width="20"
+      height="20" />
+  </div>
+
+  <div
+    class="flex flex-row justify-content-between align-items-center card-border my-1-5">
+    <span>Paramètres de confidentialité</span>
+    <img
+      ngSrc="assets/icons/arrow/arrow-right.svg"
+      alt="Arrow right"
+      width="20"
+      height="20" />
+  </div>
+
+  <div
+    class="flex flex-row justify-content-between align-items-center card-border my-1-5">
+    <span>Supprimer mon compte</span>
+    <img
+      ngSrc="assets/icons/arrow/arrow-right.svg"
+      alt="Arrow right"
+      width="20"
+      height="20" />
+  </div>
+
+  <a
+    (click)="onClickLogout()"
+    class="text-green mt-1 underline text-lg font-medium">
+    Se déconnecter
+  </a>
+</div>

@@ -7,6 +7,8 @@ import { LocationComponent } from '~/app/main/components/location/location.compo
 import { ConfirmPaymentComponent } from '~/app/main/components/price/component/confirm-payment/confirm-payment.component';
 import { PaymentComponent } from '~/app/main/components/price/component/payment/payment.component';
 import { PriceComponent } from '~/app/main/components/price/price.component';
+import { CarbonFootprintComponent } from '~/app/main/components/profile/components/carbon-footprint/carbon-footprint.component';
+import { PartnersComponent } from '~/app/main/components/profile/components/partners/partners.component';
 import { ProfileSettingsComponent } from '~/app/main/components/profile/components/profile-settings/profile-settings.component';
 import { ProfileTravelsComponent } from '~/app/main/components/profile/components/profile-travels/profile-travels.component';
 import { ProfileComponent } from '~/app/main/components/profile/profile.component';
@@ -66,6 +68,14 @@ const routes: Routes = [
   {
     path: 'profile/travels',
     component: ProfileTravelsComponent,
+  },
+  {
+    path: 'profile/carbon-footprint',
+    component: CarbonFootprintComponent,
+  },
+  {
+    path: 'profile/partners',
+    component: PartnersComponent,
   },
 ];
 
