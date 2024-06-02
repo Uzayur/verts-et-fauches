@@ -1,1 +1,94 @@
-<p>profile works!</p>
+<div
+  class="flex flex-column align-items-center py-4 sticky top-0 background-green text-white gap-4">
+  <span class="mt-3 text-xl text-center">
+    Mon profil
+    <i
+      class="pi pi-cog text-2xl absolute right-0 pr-4"
+      (click)="onClickSettings()"></i>
+  </span>
+
+  <div class="flex flex-row gap-5 justify-content-between">
+    <img
+      class="border-circle"
+      ngSrc="assets/profile/sammy.png"
+      width="85"
+      height="85"
+      alt="profile picture" />
+
+    <div class="flex flex-column justify-content-around gap-1">
+      <div class="flex flex-column gap-2">
+        <span class="text-lg">Sammy Abel</span>
+        <span class="text-lg">30 ans</span>
+      </div>
+      <span class="text-sm">Membre depuis janvier 2024</span>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-column gap-2">
+  <img
+    src="assets/profile/map-chart.png"
+    alt="Map chart"
+    class="max-w-full h-auto" />
+
+  <div class="px-3 pt-1 pb-3 flex flex-column gap-3">
+    <div class="flex flex-column">
+      <span class="text-xl font-medium mb-1">Continents visités</span>
+      <div class="grid-container gap-2-5 mt-1">
+        <div
+          *ngFor="let continent of visitedContinents"
+          class="flex flex-column gap-1 grid-item">
+          <div class="flex flex-row justify-content-between text-sm">
+            <span>{{ continent.name }}</span>
+            <span>{{ continent.done }} / {{ continent.goal }}</span>
+          </div>
+
+          <div class="progress-bar z-neg-1">
+            <div
+              class="progress-bar__filled"
+              [ngStyle]="{
+                backgroundColor: getProgressColor(
+                  continent.done,
+                  continent.goal
+                )
+              }"
+              [style.width.%]="(continent.done / continent.goal) * 100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-column">
+      <span class="text-xl font-medium mb-1">Pays visités</span>
+      <div class="grid-container gap-2-5 mt-1">
+        <div
+          *ngFor="let country of visitedCountries"
+          class="flex flex-column gap-1 grid-item">
+          <div class="flex flex-row justify-content-between text-sm">
+            <span>{{ country.name }}</span>
+            <span>{{ country.done }} / {{ country.goal }}</span>
+          </div>
+
+          <div class="progress-bar z-neg-1">
+            <div
+              class="progress-bar__filled"
+              [ngStyle]="{
+                backgroundColor: getProgressColor(country.done, country.goal)
+              }"
+              [style.width.%]="(country.done / country.goal) * 100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a (click)="shareChartMap()" class="text-green underline text-sm">
+      Partager la carte avec vos amis
+    </a>
+
+    <div class="flex flex-row-reverse">
+      <button class="btn-primary" (click)="onClickMyTravel()">
+        Mes voyages
+      </button>
+    </div>
+  </div>
+</div>

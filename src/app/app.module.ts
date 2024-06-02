@@ -17,6 +17,8 @@ import { ProfileComponent } from '~/app/main/components/profile/profile.componen
 import { LocationDetailsComponent } from '~/app/main/components/location/components/location-details/location-details.component';
 import { TravelComponent } from '~/app/main/components/travel/travel.component';
 import { SharedModule } from '~/app/shared/shared.module';
+import { ProfileSettingsComponent } from './main/components/profile/components/profile-settings/profile-settings.component';
+import { ProfileTravelsComponent } from './main/components/profile/components/profile-travels/profile-travels.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { SharedModule } from '~/app/shared/shared.module';
     ConfirmPaymentComponent,
     LocationDetailsComponent,
     LocationInformationComponent,
+    ProfileSettingsComponent,
+    ProfileTravelsComponent,
   ],
   imports: [
     BrowserModule,
