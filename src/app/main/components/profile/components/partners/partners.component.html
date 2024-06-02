@@ -1,1 +1,34 @@
-<p>partners works!</p>
+<div
+  class="sticky top-0 py-3 px-2 background-green text-white flex flex-row text-xl">
+  <img
+    src="assets/icons/arrow/arrow-left.svg"
+    alt="Back arrow"
+    width="38"
+    (click)="onClickBackArrow()" />
+  <span class="ml-3 font-semibold align-self-center">Nos partenaires</span>
+</div>
+
+<div class="flex flex-column pt-2 pb-3">
+  <div
+    *ngFor="let partner of partners; let last = last"
+    class="flex flex-column px-3 text-justify line-height-2">
+    <div class="flex flex-row justify-content-between align-items-center">
+      <span class="text-lg font-semibold">{{ partner.name }}</span>
+      <img
+        [src]="'assets/partners/' + partner.logo"
+        alt="Partner logo"
+        class="w-auto h-2rem" />
+    </div>
+    <span class="text-base mt-2">{{ partner.description }}</span>
+
+    <a
+      (click)="onClickWebsite(partner.url)"
+      class="text-green mt-1 underline mt-2 font-medium">
+      Accéder au site
+    </a>
+
+    <p-divider
+      *ngIf="!last"
+      class="my-0-5 w-10 align-self-center text-green z-neg-1"></p-divider>
+  </div>
+</div>
