@@ -13,6 +13,7 @@ import { ProfileSettingsComponent } from '~/app/main/components/profile/componen
 import { ProfileTravelsComponent } from '~/app/main/components/profile/components/profile-travels/profile-travels.component';
 import { ProfileComponent } from '~/app/main/components/profile/profile.component';
 import { LocationInformationComponent } from '~/app/main/components/location/components/location-information/location-information.component';
+import { TravelDetailsComponent } from '~/app/main/components/travel/travel-details/travel-details.component';
 import { TravelComponent } from '~/app/main/components/travel/travel.component';
 
 const routes: Routes = [
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'travel',
     component: TravelComponent,
+  },
+  {
+    path: 'travel/details',
+    component: TravelDetailsComponent,
   },
 
   {

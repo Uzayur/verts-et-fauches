@@ -21,6 +21,7 @@ import { ProfileComponent } from '~/app/main/components/profile/profile.componen
 import { LocationDetailsComponent } from '~/app/main/components/location/components/location-details/location-details.component';
 import { TravelComponent } from '~/app/main/components/travel/travel.component';
 import { SharedModule } from '~/app/shared/shared.module';
+import { TravelDetailsComponent } from './main/components/travel/travel-details/travel-details.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { SharedModule } from '~/app/shared/shared.module';
     ProfileTravelsComponent,
     CarbonFootprintComponent,
     PartnersComponent,
+    TravelDetailsComponent,
   ],
   imports: [
     BrowserModule,
