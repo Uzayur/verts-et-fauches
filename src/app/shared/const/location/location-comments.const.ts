@@ -1,4 +1,4 @@
-import { TravelComment } from '~/app/shared/types/items/travel-comment.type';
+import { TravelComment } from '~/app/shared/types/items/location-comment.type';
 
 export const travelComments: TravelComment[] = [
   {

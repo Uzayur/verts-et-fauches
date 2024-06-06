@@ -3,8 +3,8 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Calendar } from 'primeng/calendar';
 import { PriceService } from '~/app/main/services/price/price.service';
 import { itemsPrice } from '~/app/shared/const/item-price/items-price.const';
-import { PriceFilterService } from '~/app/shared/services/filter/price-filter.service';
-import { UtilsService } from '~/app/shared/services/utils/utils.service';
+import { PriceFilterService } from '~/app/shared/services/price-filter.service';
+import { UtilsService } from '~/app/shared/services/utils.service';
 import { PriceSortFilters } from '~/app/shared/types/enum/price/price-sort-filters.enum';
 import { PriceTransportFilters } from '~/app/shared/types/enum/price/price-transport-filter.enum';
 import {

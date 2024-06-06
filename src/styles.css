@@ -59,6 +59,15 @@ input:focus {
     box-shadow: none;
 }
 
+.p-dropdown:not(.p-disabled):hover {
+    border-color: #ffffff;
+}
+
+.p-dropdown:not(.p-disabled).p-focus {
+    box-shadow: none;
+    border-color: white;
+}
+
 
 /*  HEIGHT/WIDTH  */
 .w-2-5 {
@@ -206,6 +215,10 @@ input:focus {
     border-radius: 12px;
 }
 
+.border-14 {
+    border-radius: 14px;
+}
+
 
 /*  BUTTON  */
 .btn-primary {
@@ -326,3 +339,6 @@ input:focus {
     border: none;
 }
 
+.p-dropdown {
+    width: 9rem
+}

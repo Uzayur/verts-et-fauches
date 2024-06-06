@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { travelComments } from '~/app/shared/const/travel/travel-comments.const';
+import { travelComments } from '~/app/shared/const/location/location-comments.const';
 
 @Component({
   selector: 'app-location-information',

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { HomeService } from '~/app/main/services/home/home.service';
 import { itemsInfo } from '~/app/shared/const/item-info/items-info.const';
 import { trendItemsInfo } from '~/app/shared/const/item-info/trend-items-info.const';
-import { UtilsService } from '~/app/shared/services/utils/utils.service';
+import { UtilsService } from '~/app/shared/services/utils.service';
 import { ItemInfo } from '~/app/shared/types/items/item-info.type';
 
 @Component({
