@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { itemTravelConst } from '~/app/shared/const/travel/item-travel.const';
+import { UtilsService } from '~/app/shared/services/utils.service';
 import { TravelTransportFilter } from '~/app/shared/types/enum/travel/travel-transport-filter.enum';
 import { ItemTravel } from '~/app/shared/types/items/item-travel.type';
 
@@ -17,7 +19,11 @@ export class TravelComponent implements OnInit {
   travelTransportFilters = TravelTransportFilter;
   activeTransportFilter: TravelTransportFilter[];
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private utilsService: UtilsService,
+    private router: Router
+  ) {
     this.activeTransportFilter = [];
   }
 
@@ -25,16 +31,30 @@ export class TravelComponent implements OnInit {
     return this.searchForm.get('name') as FormControl;
   }
 
+  public get nameValue(): string {
+    return this.name.value;
+  }
+
   public get duration(): FormControl {
     return this.searchForm.get('duration') as FormControl;
+  }
+
+  public get durationValue(): string {
+    return this.duration.value;
   }
 
   public get durationType(): FormControl {
     return this.searchForm.get('durationType') as FormControl;
   }
 
+  public get durationTypeValue(): string {
+    return this.durationType.value;
+  }
+
   get filteredItems(): ItemTravel[] {
     let items = [...itemTravelConst];
+
+    if (this.durationTypeValue === 'Heures') return [];
 
     if (this.activeTransportFilter.length) {
       items = items.filter(item =>
@@ -47,7 +67,18 @@ export class TravelComponent implements OnInit {
     if (this.carbonFootprintFilter)
       items.sort((a, b) => b.carbonFootprint - a.carbonFootprint);
 
-    return items;
+    if (this.durationValue && this.durationTypeValue === 'Jours')
+      items = items.filter(
+        item => item.duration.toString() === this.durationValue
+      );
+
+    return items.filter(
+      item =>
+        this.utilsService.compareStrings(item.country, this.nameValue) ||
+        item.city.some(city =>
+          this.utilsService.compareStrings(city, this.nameValue)
+        )
+    );
   }
 
   ngOnInit(): void {
@@ -58,8 +89,12 @@ export class TravelComponent implements OnInit {
     this.searchForm = this.formBuilder.group({
       name: [''],
       duration: [''],
-      durationType: [''],
+      durationType: ['Jours'],
     });
+  }
+
+  onClickItem(): void {
+    void this.router.navigate(['travel/details']);
   }
 
   onClickFilter(filter: TravelTransportFilter): void {
