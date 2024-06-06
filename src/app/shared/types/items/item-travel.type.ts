@@ -6,6 +6,7 @@ export type ItemTravel = {
   picture: string;
   price: number;
   duration: number;
+  durationType: string;
   carbonFootprint: number;
   carbonFootprintSaved: number;
   transports: string[] | TravelTransportFilter[];
