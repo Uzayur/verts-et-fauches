@@ -11,8 +11,6 @@ import { Observable } from 'rxjs';
 import { PriceService } from '~/app/main/services/price/price.service';
 import { paymentDate } from '~/app/shared/const/regex/payment-date.regex';
 import { PaymentMethod } from '~/app/shared/types/enum/price/payment-method.enum';
-import { PriceSortFilters } from '~/app/shared/types/enum/price/price-sort-filters.enum';
-import { PriceTransportFilters } from '~/app/shared/types/enum/price/price-transport-filter.enum';
 import { ItemPriceTrip } from '~/app/shared/types/items/item-price.type';
 
 @Component({
@@ -23,9 +21,6 @@ import { ItemPriceTrip } from '~/app/shared/types/items/item-price.type';
 export class PaymentComponent implements OnInit {
   selectedTrip$: Observable<ItemPriceTrip | null>;
   travelers$: Observable<number>;
-
-  priceTransportFilters = PriceTransportFilters;
-  priceSortFilters = PriceSortFilters;
 
   paymentForm!: FormGroup;
 
