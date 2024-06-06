@@ -1,1 +1,20 @@
-<p>travel-details works!</p>
+<div
+  class="py-3 px-2 sticky top-0 background-green text-white flex flex-row justify-content-between z-5">
+  <div class="flex flex-row text-xl">
+    <img
+      src="assets/icons/arrow/arrow-left.svg"
+      alt="Back arrow"
+      width="30"
+      (click)="onClickBackArrow()" />
+    <span class="ml-3 font-semibold align-self-center">Florence - Pise</span>
+  </div>
+
+  <span class="text-xl align-self-center pr-2">190€</span>
+</div>
+
+<p-tabView class="text-sm w-full">
+  <p-tabPanel class="w-full" *ngFor="let tab of tabs" [header]="tab.title">
+    <app-daily-program
+      [initialData]="dailyPrograms[tab.index]"></app-daily-program>
+  </p-tabPanel>
+</p-tabView>

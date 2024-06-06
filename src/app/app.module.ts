@@ -6,6 +6,8 @@ import { ProfileSettingsComponent } from './main/components/profile/components/p
 import { ProfileTravelsComponent } from './main/components/profile/components/profile-travels/profile-travels.component';
 import { CarbonFootprintComponent } from './main/components/profile/components/carbon-footprint/carbon-footprint.component';
 import { PartnersComponent } from './main/components/profile/components/partners/partners.component';
+import { TravelDetailsComponent } from './main/components/travel/travel-details/travel-details.component';
+import { DailyProgramComponent } from './main/components/travel/daily-program/daily-program.component';
 import { LocationInformationComponent } from '~/app/main/components/location/components/location-information/location-information.component';
 import { AppRoutingModule } from '~/app/app-routing.module';
 import { AppComponent } from '~/app/app.component';
@@ -21,7 +23,6 @@ import { ProfileComponent } from '~/app/main/components/profile/profile.componen
 import { LocationDetailsComponent } from '~/app/main/components/location/components/location-details/location-details.component';
 import { TravelComponent } from '~/app/main/components/travel/travel.component';
 import { SharedModule } from '~/app/shared/shared.module';
-import { TravelDetailsComponent } from './main/components/travel/travel-details/travel-details.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { TravelDetailsComponent } from './main/components/travel/travel-details/
     CarbonFootprintComponent,
     PartnersComponent,
     TravelDetailsComponent,
+    DailyProgramComponent,
   ],
   imports: [
     BrowserModule,

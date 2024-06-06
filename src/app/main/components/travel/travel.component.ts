@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { itemTravelConst } from '~/app/shared/const/travel/item-travel.const';
 import { UtilsService } from '~/app/shared/services/utils.service';
 import { TravelTransportFilter } from '~/app/shared/types/enum/travel/travel-transport-filter.enum';
-import { ItemTravel } from '~/app/shared/types/items/item-travel.type';
+import { ItemTravel } from '~/app/shared/types/items/travel/item-travel.type';
 
 @Component({
   selector: 'app-travel',

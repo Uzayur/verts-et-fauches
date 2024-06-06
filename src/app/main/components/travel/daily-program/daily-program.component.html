@@ -1,0 +1,81 @@
+<div class="flex flex-column">
+  <img
+    class="w-full object-fit-cover h-10rem"
+    src="assets/travel/travel-map.png"
+    alt="Google map image" />
+
+  <div class="flex flex-column pt-2 pb-3 px-3">
+    <div class="flex flex-column gap-2">
+      <div class="flex flex-row justify-content-between align-items-center">
+        <div>
+          <span class="font-semibold">Étape 1 :&nbsp;</span>
+          <span>{{ initialData.transportActivity.name }}</span>
+        </div>
+        <img
+          [src]="
+            'assets/transports/' +
+            initialData.transportActivity.transport +
+            '.svg'
+          "
+          alt="transport image"
+          width="20"
+          height="20" />
+      </div>
+
+      <div class="gap-1">
+        <div class="flex flex-row text-sm">
+          <span class="font-semibold">Départ :&nbsp;</span>
+          {{ initialData.transportActivity.departure.city }},
+          {{ initialData.transportActivity.departure.country }} -
+          {{ initialData.transportActivity.departure.station }}
+        </div>
+        <div class="flex flex-row text-sm">
+          <span class="font-semibold">Le :&nbsp;</span>
+          {{ initialData.transportActivity.departure.time }}
+        </div>
+      </div>
+
+      <div class="gap-1">
+        <div class="flex flex-row text-sm">
+          <span class="font-semibold">Arrivé :&nbsp;</span>
+          {{ initialData.transportActivity.arrival.city }},
+          {{ initialData.transportActivity.arrival.country }} -
+          {{ initialData.transportActivity.arrival.station }}
+        </div>
+        <div class="flex flex-row text-sm">
+          <span class="font-semibold">Le :&nbsp;</span>
+          {{ initialData.transportActivity.arrival.time }}
+        </div>
+      </div>
+    </div>
+
+    <ng-container
+      *ngFor="let activity of initialData.basicActivities; let i = index">
+      <p-divider class="-my-1 w-10 align-self-center text-green"></p-divider>
+
+      <div
+        class="flex flex-row gap-2 justify-content-between align-items-center">
+        <div>
+          <span class="font-semibold">Étape {{ i + 2 }} :</span>
+          {{ activity.name }}
+          {{ activity.price !== 'Gratuit' ? activity.price : '' }}
+        </div>
+        <img
+          [src]="'assets/transports/' + activity.transport + '.svg'"
+          alt="transport image"
+          width="20"
+          height="20" />
+      </div>
+
+      <span class="text-justify text-sm mt-1">{{ activity.description }}</span>
+    </ng-container>
+
+    <div class="flex flex-row justify-content-between align-items-center mt-3">
+      <span class="font-semibold text-green">
+        {{ initialData.carbonFootprint }} kg de CO<sub>2</sub>
+      </span>
+
+      <button class="btn-primary" (click)="onClickToBook()">Réserver</button>
+    </div>
+  </div>
+</div>

@@ -316,6 +316,11 @@ input:focus {
     border: 0;
 }
 
+/*  IMAGE  */
+.object-fit-cover {
+    object-fit: cover
+}
+
 
 /*  NG STYLE  */
 .p-progress-spinner-circle {
@@ -341,4 +346,14 @@ input:focus {
 
 .p-dropdown {
     width: 9rem
+}
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    background: #ffffff;
+    border-color: #678D3E;
+    color: #678D3E;
+}
+
+.p-tabview .p-tabview-panels {
+    padding: 0;
 }
