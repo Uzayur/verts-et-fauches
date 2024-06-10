@@ -1,0 +1,185 @@
+<div class="flex flex-column">
+  <img
+    class="w-full object-fit-cover h-10rem"
+    src="assets/travel/travel-map.png"
+    alt="Google map image" />
+
+  <div class="flex flex-column pt-2 pb-3 px-3">
+    <div class="flex flex-row gap-2">
+      <div
+        class="flex flex-column gap-2 justify-content-center w-full relative">
+        <div
+          *ngIf="initialData.transportActivity.status !== travelStatus.NONE"
+          class="absolute align-self-center">
+          <img
+            width="65"
+            height="65"
+            [src]="
+              initialData.transportActivity.status === travelStatus.MINUS
+                ? 'assets/icons/minus-selected.svg'
+                : 'assets/icons/right-selected.svg'
+            "
+            alt="Icon" />
+        </div>
+
+        <div
+          class="flex flex-row justify-content-between align-items-center"
+          [ngClass]="
+            initialData.transportActivity.status !== travelStatus.NONE
+              ? 'opacity-40'
+              : null
+          ">
+          <div>
+            <span class="font-semibold">Étape 1 :&nbsp;</span>
+            <span>{{ initialData.transportActivity.name }}</span>
+          </div>
+          <img
+            [src]="
+              'assets/transports/' +
+              initialData.transportActivity.transport +
+              '.svg'
+            "
+            alt="transport image"
+            width="20"
+            height="20" />
+        </div>
+
+        <div
+          class="gap-1"
+          [ngClass]="
+            initialData.transportActivity.status !== travelStatus.NONE
+              ? 'opacity-40'
+              : null
+          ">
+          <div class="flex flex-row text-sm">
+            <span class="font-semibold text-no-wrap">Départ :&nbsp;</span>
+            {{ initialData.transportActivity.departure.city }},
+            {{ initialData.transportActivity.departure.country }} -
+            {{ initialData.transportActivity.departure.station }}
+          </div>
+          <div class="flex flex-row text-sm">
+            <span class="font-semibold">Le :&nbsp;</span>
+            {{ initialData.transportActivity.departure.time }}
+          </div>
+        </div>
+
+        <div
+          class="gap-1"
+          [ngClass]="
+            initialData.transportActivity.status !== travelStatus.NONE
+              ? 'opacity-40'
+              : null
+          ">
+          <div class="flex flex-row text-sm">
+            <span class="font-semibold text-no-wrap">Arrivé :&nbsp;</span>
+            {{ initialData.transportActivity.arrival.city }},
+            {{ initialData.transportActivity.arrival.country }} -
+            {{ initialData.transportActivity.arrival.station }}
+          </div>
+          <div class="flex flex-row text-sm">
+            <span class="font-semibold">Le :&nbsp;</span>
+            {{ initialData.transportActivity.arrival.time }}
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-column gap-1 align-self-center justify-content-center">
+        <img
+          [src]="
+            initialData.transportActivity.status === travelStatus.MINUS
+              ? 'assets/icons/minus-selected.svg'
+              : 'assets/icons/minus.svg'
+          "
+          alt="Minus icon"
+          width="25"
+          height="25"
+          (click)="onClickTransportActivity(travelStatus.MINUS)" />
+
+        <img
+          [src]="
+            initialData.transportActivity.status === travelStatus.RIGHT
+              ? 'assets/icons/right-selected.svg'
+              : 'assets/icons/right.svg'
+          "
+          alt="Right icon"
+          width="25"
+          height="25"
+          (click)="onClickTransportActivity(travelStatus.RIGHT)" />
+      </div>
+    </div>
+
+    <ng-container
+      *ngFor="let activity of initialData.basicActivities; let i = index">
+      <p-divider class="-my-1 w-10 align-self-center text-green"></p-divider>
+
+      <div class="flex flex-row gap-2 justify-content-between relative">
+        <div class="flex flex-column justify-content-center">
+          <div
+            *ngIf="activity.status !== travelStatus.NONE"
+            class="absolute align-self-center">
+            <img
+              width="65"
+              height="65"
+              [src]="
+                activity.status === travelStatus.MINUS
+                  ? 'assets/icons/minus-selected.svg'
+                  : 'assets/icons/right-selected.svg'
+              "
+              alt="Icon" />
+          </div>
+
+          <div
+            [ngClass]="
+              activity.status !== travelStatus.NONE ? 'opacity-40' : null
+            "
+            class="flex flex-row gap-2 justify-content-between align-items-center">
+            <div>
+              <span class="font-semibold">Étape {{ i + 2 }} :</span>
+              {{ activity.name }}
+              {{ activity.price !== 'Gratuit' ? activity.price : '' }}
+            </div>
+            <img
+              [src]="'assets/transports/' + activity.transport + '.svg'"
+              alt="transport image"
+              width="20"
+              height="20" />
+          </div>
+
+          <span
+            class="text-justify text-sm mt-1"
+            [ngClass]="
+              activity.status !== travelStatus.NONE ? 'opacity-40' : null
+            ">
+            {{ activity.description }}
+          </span>
+        </div>
+
+        <div
+          class="flex flex-column gap-1 align-self-center justify-content-center">
+          <img
+            [src]="
+              activity.status === travelStatus.MINUS
+                ? 'assets/icons/minus-selected.svg'
+                : 'assets/icons/minus.svg'
+            "
+            alt="Minus icon"
+            width="25"
+            height="25"
+            (click)="onClickBasicActivity(activity, travelStatus.MINUS)" />
+
+          <img
+            [src]="
+              activity.status === travelStatus.RIGHT
+                ? 'assets/icons/right-selected.svg'
+                : 'assets/icons/right.svg'
+            "
+            alt="Right icon"
+            width="25"
+            height="25"
+            (click)="onClickBasicActivity(activity, travelStatus.RIGHT)" />
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

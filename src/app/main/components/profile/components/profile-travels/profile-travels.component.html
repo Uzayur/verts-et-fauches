@@ -1,1 +1,76 @@
-<p>profile-travels works!</p>
+<div class="sticky top-0 py-3 background-green flex flex-column z-2">
+  <div class="flex flex-row text-xl px-2">
+    <img
+      src="assets/icons/arrow/arrow-left.svg"
+      alt="Back arrow"
+      width="38"
+      (click)="onClickBackArrow()" />
+    <span class="ml-3 font-semibold align-self-center text-white">
+      Mes voyages
+    </span>
+  </div>
+
+  <div class="w-full flex flex-column align-self-center">
+    <form
+      [formGroup]="searchForm"
+      class="w-11 mt-3 flex flex-column align-self-center gap-3">
+      <green-input
+        class="w-full align-self-center"
+        [formControl]="name"
+        [formControlName]="'name'"
+        [icon]="'pi pi-search'"
+        [placeholder]="'Pays, villes, régions...'"></green-input>
+
+      <div
+        class="flex flex-row gap-1 align-items-center font-semibold w-full justify-content-evenly">
+        <div
+          class="flex flex-row align-items-center py-2 px-3 border-15 gap-2"
+          [ngClass]="
+            activeFilter === settingsFilter.IN_PROGRESS
+              ? 'bg-green-secondary text-white'
+              : 'bg-white'
+          "
+          (click)="onClickFilter(settingsFilter.IN_PROGRESS)">
+          En cours
+        </div>
+
+        <div
+          class="flex flex-row align-items-center py-2 px-3 border-15 gap-2"
+          [ngClass]="
+            activeFilter === settingsFilter.PLANNED
+              ? 'bg-green-secondary text-white'
+              : 'bg-white'
+          "
+          (click)="onClickFilter(settingsFilter.PLANNED)">
+          À venir
+        </div>
+
+        <div
+          class="flex flex-row align-items-center py-2 px-3 border-15 gap-2"
+          [ngClass]="
+            activeFilter === settingsFilter.FINISHED
+              ? 'bg-green-secondary text-white'
+              : 'bg-white'
+          "
+          (click)="onClickFilter(settingsFilter.FINISHED)">
+          Terminé
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+@switch (activeFilter) {
+  @case (settingsFilter.IN_PROGRESS) {
+    <p-tabView
+      class="text-sm w-full"
+      *ngIf="activeFilter === settingsFilter.IN_PROGRESS">
+      <p-tabPanel class="w-full" *ngFor="let tab of tabs" [header]="tab.title">
+        <app-profile-daily-program
+          [initialData]="
+            profileDailyPrograms[tab.index]
+          "></app-profile-daily-program>
+      </p-tabPanel>
+    </p-tabView>
+  }
+}

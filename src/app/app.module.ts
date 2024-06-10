@@ -23,6 +23,7 @@ import { ProfileComponent } from '~/app/main/components/profile/profile.componen
 import { LocationDetailsComponent } from '~/app/main/components/location/components/location-details/location-details.component';
 import { TravelComponent } from '~/app/main/components/travel/travel.component';
 import { SharedModule } from '~/app/shared/shared.module';
+import { ProfileDailyProgramComponent } from './main/components/profile/components/profile-travels/profile-daily-program/profile-daily-program.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { SharedModule } from '~/app/shared/shared.module';
     PartnersComponent,
     TravelDetailsComponent,
     DailyProgramComponent,
+    ProfileDailyProgramComponent,
   ],
   imports: [
     BrowserModule,
