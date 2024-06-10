@@ -1,1 +1,80 @@
-<p>carbon-footprint-resume works!</p>
+<div class="px-3 pt-2 pb-3">
+  <span class="font-semibold">Votre consommation</span>
+
+  <div class="flex flex-column gap-1 mt-2">
+    <div class="card-border-price flex flex-column gap-2 text-sm">
+      <div class="flex flex-row justify-content-between align-items-center">
+        <div class="flex flex-row gap-2">
+          <span class="font-semibold">Transport :</span>
+          <span>5.67 kg de CO<sub>2</sub></span>
+        </div>
+
+        <div class="flex flex-row">
+          <img
+            class="mx-1 mb-0-5"
+            src="assets/transports/train.svg"
+            alt="Right arrow"
+            width="20" />
+          <img
+            class="mx-1 mb-0-5"
+            src="assets/transports/bus.svg"
+            alt="Right arrow"
+            width="20" />
+        </div>
+      </div>
+
+      <p-divider class="-my-3 w-10 align-self-center text-green"></p-divider>
+
+      <span class="font-semibold text-center text-xs">
+        17.65 kg de CO<sub>2</sub> de moins qu'une voiture
+      </span>
+    </div>
+
+    <div class="card-border-price flex flex-column gap-2 text-sm my-2">
+      <div class="flex flex-row gap-2">
+        <span class="font-semibold">Restaurant :</span>
+        <span>29.84 kg de CO<sub>2</sub></span>
+      </div>
+
+      <p-divider class="-my-3 w-10 align-self-center text-green"></p-divider>
+
+      <span class="font-semibold text-center text-xs">
+        4.32 kg de CO<sub>2</sub> de moins que la moyenne
+      </span>
+    </div>
+
+    <div class="card-border-price flex flex-column gap-2 text-sm my-2">
+      <div class="flex flex-row gap-2">
+        <span class="font-semibold">Hôtels :</span>
+        <span>61.34 kg de CO<sub>2</sub></span>
+      </div>
+
+      <p-divider class="-my-3 w-10 align-self-center text-green"></p-divider>
+
+      <span class="font-semibold text-center text-xs">
+        8.98 kg de CO<sub>2</sub> de moins que la moyenne
+      </span>
+    </div>
+  </div>
+
+  <div>
+    <div
+      class="flex flex-row justify-content-between w-full align-items-center pt-3 text-sm">
+      <span class="font-semibold"> Consommation totale : </span>
+
+      <span class="font-semibold text-green">
+        {{ carbonFootprintItem.carbonFootprint }} kg de CO<sub>2</sub>
+      </span>
+    </div>
+
+    <p-divider class="-my-2 w-10 align-self-center text-green"></p-divider>
+
+    <span class="text-justify">
+      Soit une économie totale de
+      <span class="text-green font-semibold">
+        {{ carbonFootprintItem.carboonFootprintSaved }} kg
+      </span>
+      de CO<sub>2</sub> par rapport à la consommation d'un français moyen.
+    </span>
+  </div>
+</div>
