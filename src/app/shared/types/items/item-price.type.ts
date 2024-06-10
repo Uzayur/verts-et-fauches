@@ -10,7 +10,7 @@ export type TravelInfo = {
 export type ItemPriceTrip = {
   date: string;
   transport: string | PriceTransportFilters;
-  carbonImpact: number;
+  carbonFootprint: number;
   price: number;
   departureInfo: TravelInfo;
   arrivalInfo: TravelInfo;

@@ -1,1 +1,216 @@
-<p>carbon-footprint works!</p>
+<div class="sticky top-0 py-3 background-green flex flex-column z-2">
+  <div class="flex flex-row text-xl px-2">
+    <img
+      src="assets/icons/arrow/arrow-left.svg"
+      alt="Back arrow"
+      width="38"
+      (click)="onClickBackArrow()" />
+    <span class="ml-3 font-semibold align-self-center text-white">
+      Mon empreinte carbone
+    </span>
+  </div>
+
+  <div class="w-full flex flex-column align-self-center">
+    <form
+      [formGroup]="searchForm"
+      class="w-11 mt-3 flex flex-column align-self-center gap-3">
+      <green-input
+        class="w-full align-self-center"
+        [formControl]="name"
+        [formControlName]="'name'"
+        [icon]="'pi pi-search'"
+        [placeholder]="'Pays, villes, régions...'"></green-input>
+
+      <div
+        class="flex flex-row gap-1 align-items-center font-semibold w-full justify-content-between">
+        <div
+          class="py-1 px-2 border-15"
+          [ngClass]="
+            activeTransportFilter.includes(travelTransportFilters.HIKE)
+              ? 'bg-green-secondary'
+              : 'bg-white'
+          "
+          (click)="onClickFilter(travelTransportFilters.HIKE)">
+          <img
+            [ngSrc]="
+              activeTransportFilter.includes(travelTransportFilters.HIKE)
+                ? 'assets/transports/hike-white.svg'
+                : 'assets/transports/hike.svg'
+            "
+            alt="Hike"
+            height="25"
+            width="25" />
+        </div>
+        <div
+          class="py-1 px-2 border-15"
+          [ngClass]="
+            activeTransportFilter.includes(travelTransportFilters.BIKE)
+              ? 'bg-green-secondary'
+              : 'bg-white'
+          "
+          (click)="onClickFilter(travelTransportFilters.BIKE)">
+          <img
+            [ngSrc]="
+              activeTransportFilter.includes(travelTransportFilters.BIKE)
+                ? 'assets/transports/bike-white.svg'
+                : 'assets/transports/bike.svg'
+            "
+            alt="Bike"
+            height="25"
+            width="25" />
+        </div>
+        <div
+          class="py-1 px-2 border-15"
+          [ngClass]="
+            activeTransportFilter.includes(travelTransportFilters.VAN)
+              ? 'bg-green-secondary'
+              : 'bg-white'
+          "
+          (click)="onClickFilter(travelTransportFilters.VAN)">
+          <img
+            [ngSrc]="
+              activeTransportFilter.includes(travelTransportFilters.VAN)
+                ? 'assets/transports/van-white.svg'
+                : 'assets/transports/van.svg'
+            "
+            alt="Van"
+            height="25"
+            width="25" />
+        </div>
+        <div
+          class="py-1 px-2 border-15"
+          [ngClass]="
+            activeTransportFilter.includes(travelTransportFilters.BUS)
+              ? 'bg-green-secondary'
+              : 'bg-white'
+          "
+          (click)="onClickFilter(travelTransportFilters.BUS)">
+          <img
+            [ngSrc]="
+              activeTransportFilter.includes(travelTransportFilters.BUS)
+                ? 'assets/transports/bus-white.svg'
+                : 'assets/transports/bus.svg'
+            "
+            alt="Van"
+            height="25"
+            width="25" />
+        </div>
+        <div
+          class="py-1 px-2 border-15"
+          [ngClass]="
+            activeTransportFilter.includes(travelTransportFilters.TRAIN)
+              ? 'bg-green-secondary'
+              : 'bg-white'
+          "
+          (click)="onClickFilter(travelTransportFilters.TRAIN)">
+          <img
+            [ngSrc]="
+              activeTransportFilter.includes(travelTransportFilters.TRAIN)
+                ? 'assets/transports/train-white.svg'
+                : 'assets/transports/train.svg'
+            "
+            alt="Van"
+            height="25"
+            width="25" />
+        </div>
+        <div
+          class="flex flex-row align-items-center py-2 px-2 border-15 gap-2"
+          [ngClass]="
+            carbonFootprintFilter ? 'bg-green-secondary text-white' : 'bg-white'
+          "
+          (click)="onClickSortFilter()">
+          <span>CO<sub>2</sub></span>
+          <img
+            [ngSrc]="
+              carbonFootprintFilter
+                ? 'assets/icons/arrow/arrow-bottom-white.svg'
+                : 'assets/icons/arrow/arrow-bottom.svg'
+            "
+            alt="Bottom arrow"
+            height="17"
+            width="16" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="flex flex-column justify-content-between p-3 gap-2-5">
+  @for (item of filteredItems; track item.price) {
+    @if (isPriceTripItem(item)) {
+      <div
+        class="flex flex-column card-border-price gap-1 text-sm"
+        (click)="onClickPriceTripItem(item)">
+        <div class="flex flex-row justify-content-between align-items-center">
+          <span>
+            {{ item.departureInfo.time }} : {{ item.departureInfo.station }}
+          </span>
+          <div
+            class="flex flex-row align-items-center justify-content-between w-2-5">
+            <img
+              [ngSrc]="'assets/transports/' + item.transport + '.svg'"
+              [alt]="item.transport"
+              width="20"
+              height="20" />
+
+            <span>{{ item.price }}€</span>
+          </div>
+        </div>
+
+        <div class="flex flex-row justify-content-between align-items-center">
+          <span>
+            {{ item.arrivalInfo.time }} : {{ item.arrivalInfo.station }}
+          </span>
+
+          <span class="text-green text-xxs font-semibold mt-0-5">
+            {{ item.carbonFootprint | number: '1.2-2' }} kg de CO<sub>2</sub>
+          </span>
+        </div>
+      </div>
+    } @else if (isTravelItem(item)) {
+      <div
+        class="card-border-travel border-round-2xl flex flex-column"
+        (click)="onClickTravelItem()">
+        <div class="relative w-full">
+          <img
+            class="w-full image align-self-center h-10rem border-round-top-2xl"
+            [src]="item.picture"
+            alt="City picture" />
+          <div
+            class="w-full absolute top-0 flex flex-row justify-content-between px-2 pt-2">
+            <span class="py-1 px-2 bg-white border-round-2xl text-xs">
+              {{ item.country }}
+            </span>
+            <span class="py-1 px-2 bg-white border-round-2xl text-xs">
+              {{ item.price }}€
+            </span>
+          </div>
+        </div>
+
+        <div class="pt-1 px-2 pb-2 flex flex-column gap-1">
+          <div class="flex flex-row justify-content-between align-items-center">
+            <span class="text-sm">{{ item.city.join(' - ') }}</span>
+            <div class="flex flex-row gap-2 align-items-center">
+              @for (transport of item.transports; track transport) {
+                <img
+                  [src]="'assets/transports/' + transport + '.svg'"
+                  alt="Transport image"
+                  height="20"
+                  width="20" />
+              }
+              <span class="text-sm ml-2">
+                {{ item.duration }} {{ item.durationType }}s
+              </span>
+            </div>
+          </div>
+
+          <span class="font-semibold text-xs text-green">
+            {{ item.carbonFootprintSaved }} kg de CO<sub>2</sub> préservé
+          </span>
+        </div>
+      </div>
+    }
+  } @empty {
+    <span class="text-lg my-10 align-self-center">Aucun résultat</span>
+  }
+</div>

@@ -65,7 +65,7 @@ export class TravelComponent implements OnInit {
     }
 
     if (this.carbonFootprintFilter)
-      items.sort((a, b) => b.carbonFootprint - a.carbonFootprint);
+      items.sort((a, b) => a.carbonFootprint - b.carbonFootprint);
 
     if (this.durationValue && this.durationTypeValue === 'Jours')
       items = items.filter(

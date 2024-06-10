@@ -9,7 +9,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '29 juin 2024',
         transport: PriceTransportFilters.TRAIN,
-        carbonImpact: 0.72,
+        carbonFootprint: 0.72,
         price: 57,
         departureInfo: {
           country: 'France',
@@ -27,7 +27,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '29 juin 2024',
         transport: PriceTransportFilters.BIKE,
-        carbonImpact: 0,
+        carbonFootprint: 0,
         price: 0,
         departureInfo: {
           country: 'France',
@@ -45,7 +45,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '29 juin 2024',
         transport: PriceTransportFilters.TRAIN,
-        carbonImpact: 0.72,
+        carbonFootprint: 0.72,
         price: 68,
         departureInfo: {
           country: 'France',
@@ -63,7 +63,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '29 juin 2024',
         transport: PriceTransportFilters.BUS,
-        carbonImpact: 6.43,
+        carbonFootprint: 6.43,
         price: 23,
         departureInfo: {
           country: 'France',
@@ -81,7 +81,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '29 juin 2024',
         transport: 'van',
-        carbonImpact: 80.02,
+        carbonFootprint: 80.02,
         price: 12,
         departureInfo: {
           country: 'France',
@@ -99,7 +99,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '29 juin 2024',
         transport: PriceTransportFilters.TRAIN,
-        carbonImpact: 0.71,
+        carbonFootprint: 0.71,
         price: 76,
         departureInfo: {
           country: 'France',
@@ -118,7 +118,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '29 juin 2024',
         transport: PriceTransportFilters.TRAIN,
-        carbonImpact: 0.72,
+        carbonFootprint: 0.72,
         price: 38,
         arrivalInfo: {
           country: 'France',
@@ -136,7 +136,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '29 juin 2024',
         transport: PriceTransportFilters.BIKE,
-        carbonImpact: 0,
+        carbonFootprint: 0,
         price: 0,
         arrivalInfo: {
           country: 'France',
@@ -154,7 +154,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '29 juin 2024',
         transport: PriceTransportFilters.TRAIN,
-        carbonImpact: 0.72,
+        carbonFootprint: 0.72,
         price: 59,
         arrivalInfo: {
           country: 'France',
@@ -172,7 +172,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '29 juin 2024',
         transport: PriceTransportFilters.BUS,
-        carbonImpact: 6.43,
+        carbonFootprint: 6.43,
         price: 26,
         arrivalInfo: {
           country: 'France',
@@ -190,7 +190,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '29 juin 2024',
         transport: 'van',
-        carbonImpact: 75.02,
+        carbonFootprint: 75.02,
         price: 12,
         arrivalInfo: {
           country: 'France',
@@ -208,7 +208,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '29 juin 2024',
         transport: PriceTransportFilters.TRAIN,
-        carbonImpact: 0.76,
+        carbonFootprint: 0.76,
         price: 73,
         arrivalInfo: {
           country: 'France',
@@ -231,7 +231,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '30 juin 2024',
         transport: PriceTransportFilters.TRAIN,
-        carbonImpact: 0.72,
+        carbonFootprint: 0.72,
         price: 57,
         departureInfo: {
           country: 'France',
@@ -249,7 +249,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '30 juin 2024',
         transport: PriceTransportFilters.BIKE,
-        carbonImpact: 0,
+        carbonFootprint: 0,
         price: 0,
         departureInfo: {
           country: 'France',
@@ -267,7 +267,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '30 juin 2024',
         transport: PriceTransportFilters.TRAIN,
-        carbonImpact: 0.72,
+        carbonFootprint: 0.72,
         price: 68,
         departureInfo: {
           country: 'France',
@@ -285,7 +285,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '30 juin 2024',
         transport: PriceTransportFilters.BUS,
-        carbonImpact: 6.43,
+        carbonFootprint: 6.43,
         price: 23,
         departureInfo: {
           country: 'France',
@@ -303,7 +303,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '30 juin 2024',
         transport: 'van',
-        carbonImpact: 80.02,
+        carbonFootprint: 80.02,
         price: 12,
         departureInfo: {
           country: 'France',
@@ -321,7 +321,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '30 juin 2024',
         transport: PriceTransportFilters.TRAIN,
-        carbonImpact: 0.71,
+        carbonFootprint: 0.71,
         price: 76,
         departureInfo: {
           country: 'France',
@@ -340,7 +340,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '30 juin 2024',
         transport: PriceTransportFilters.TRAIN,
-        carbonImpact: 0.72,
+        carbonFootprint: 0.72,
         price: 38,
         arrivalInfo: {
           country: 'France',
@@ -358,7 +358,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '30 juin 2024',
         transport: PriceTransportFilters.BIKE,
-        carbonImpact: 0,
+        carbonFootprint: 0,
         price: 0,
         arrivalInfo: {
           country: 'France',
@@ -376,7 +376,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '30 juin 2024',
         transport: PriceTransportFilters.BUS,
-        carbonImpact: 6.43,
+        carbonFootprint: 6.43,
         price: 26,
         arrivalInfo: {
           country: 'France',
@@ -394,7 +394,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '30 juin 2024',
         transport: 'van',
-        carbonImpact: 75.02,
+        carbonFootprint: 75.02,
         price: 12,
         arrivalInfo: {
           country: 'France',
@@ -412,7 +412,7 @@ export const itemsPrice: ItemPrice[] = [
       {
         date: '30 juin 2024',
         transport: PriceTransportFilters.TRAIN,
-        carbonImpact: 0.76,
+        carbonFootprint: 0.76,
         price: 73,
         arrivalInfo: {
           country: 'France',
