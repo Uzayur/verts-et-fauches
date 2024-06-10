@@ -16,7 +16,7 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.isShow = false;
-      void this.router.navigate(['/profile/carbon-footprint']);
+      void this.router.navigate(['/profile/carbon-footprint/details']);
     }, this.timeout);
   }
 }

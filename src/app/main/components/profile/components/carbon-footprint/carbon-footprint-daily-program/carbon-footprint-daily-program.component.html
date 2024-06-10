@@ -1,0 +1,110 @@
+<div class="flex flex-column gap-1 px-3 pt-2 pb-3">
+  <div class="card-border-price flex flex-column gap-2 text-sm my-1-5">
+    <div class="flex flex-row justify-content-between align-items-center">
+      <div class="flex flex-row gap-2">
+        <span class="font-semibold">Transport :</span>
+        <span>
+          {{ carbonFootprintItem.dailyProgram.transportActivity.departureCity }}
+          <img
+            class="mx-1 mb-0-5"
+            src="assets/icons/arrow/large-arrow-right.svg"
+            alt="Right arrow"
+            width="15" />
+          {{ carbonFootprintItem.dailyProgram.transportActivity.arrivalCity }}
+        </span>
+      </div>
+
+      <img
+        [ngSrc]="
+          'assets/transports/' +
+          carbonFootprintItem.dailyProgram.transportActivity.transport +
+          '.svg'
+        "
+        [alt]="carbonFootprintItem.dailyProgram.transportActivity.transport"
+        width="20"
+        height="20" />
+    </div>
+
+    <div class="flex flex-row justify-content-between align-items-center">
+      <div class="flex flex-row gap-2">
+        <span class="font-semibold">Durée :</span>
+        <span>{{
+          carbonFootprintItem.dailyProgram.transportActivity.duration
+        }}</span>
+      </div>
+
+      <span class="font-semibold text-green text-xs">
+        {{ carbonFootprintItem.dailyProgram.transportActivity.carbonFootprint }}
+        kg de CO<sub>2</sub>
+      </span>
+    </div>
+
+    <p-divider class="-my-3 w-10 align-self-center text-green"></p-divider>
+
+    <span class="font-semibold text-center text-xs">
+      {{
+        carbonFootprintItem.dailyProgram.transportActivity.carbonFootprintSaved
+      }}
+      kg de CO<sub>2</sub> de moins qu'une voiture
+    </span>
+  </div>
+
+  @for (
+    item of carbonFootprintItem.dailyProgram.basicActivities;
+    track item.carbonFootprint
+  ) {
+    <div class="card-border-price flex flex-column gap-2 text-sm my-1">
+      <div class="flex flex-row justify-content-between align-items-center">
+        <div class="flex flex-row gap-2">
+          <span class="font-semibold">{{ item.type }} :</span>
+          <span>{{ item.name }}</span>
+        </div>
+      </div>
+
+      <div class="flex flex-row justify-content-between align-items-center">
+        <div class="flex flex-row gap-2" *ngIf="item.restaurantType">
+          <span class="font-semibold">Type :</span>
+          <span>{{ item.restaurantType }}</span>
+        </div>
+
+        <div
+          [ngClass]="
+            item.restaurantType ? null : 'flex-row-reverse flex w-full'
+          ">
+          <span class="font-semibold text-green text-xs">
+            {{ item.carbonFootprint }}
+            kg de CO<sub>2</sub>
+          </span>
+        </div>
+      </div>
+
+      <p-divider class="-my-3 w-10 align-self-center text-green"></p-divider>
+
+      <span class="font-semibold text-center text-xs">
+        {{ item.carbonFootprintSaved }} kg de CO<sub>2</sub> de moins que la
+        moyenne
+      </span>
+    </div>
+  }
+
+  <div
+    class="flex flex-row justify-content-between w-full align-items-center pt-3 text-sm">
+    <span class="font-semibold"> Consommation du jour : </span>
+
+    <span class="font-semibold text-green">
+      {{ carbonFootprintItem.dailyProgram.carbonFootprint }} kg de CO<sub
+        >2</sub
+      >
+    </span>
+  </div>
+
+  <p-divider class="-my-2 w-10 align-self-center text-green"></p-divider>
+
+  <span class="text-justify">
+    Soit une économie totale de
+    <span class="text-green font-semibold">
+      {{ carbonFootprintItem.dailyProgram.carbonFootprintSaved }} kg
+    </span>
+    de CO<sub>2</sub> par rapport à la consommation d'un français moyen.</span
+  >
+</div>

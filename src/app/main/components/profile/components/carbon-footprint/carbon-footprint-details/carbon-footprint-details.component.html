@@ -1,1 +1,36 @@
-<p>carbon-footprint-details works!</p>
+<div
+  class="sticky top-0 image-header flex flex-column align-items-center overflow-hidden">
+  <img
+    class="h-9rem w-full object-fit-cover"
+    src="assets/travel/cities/florence.png"
+    alt="City picture" />
+  <div class="absolute top-0 left-0 mt-2 p-2" (click)="onClickBackArrow()">
+    <img
+      ngSrc="assets/icons/arrow/arrow-left.svg"
+      alt="Left arrow"
+      width="30"
+      height="30" />
+  </div>
+
+  <div
+    class="flex flex-row justify-content-between w-full align-items-center px-3 pt-3">
+    <span class="font-semibold">
+      {{ carbonFootprintItem.city.join(' - ') }}
+    </span>
+
+    <span class="font-semibold text-green">
+      {{ carbonFootprintItem.carbonFootprint }} kg de CO<sub>2</sub>
+    </span>
+  </div>
+
+  <p-divider class="-mt-2 -mb-3 w-10 align-self-center text-green"></p-divider>
+
+  <p-tabView class="text-sm w-full flex flex-column">
+    <p-tabPanel class="w-full" [header]="'Jour 1'">
+      <app-carbon-footprint-daily-program></app-carbon-footprint-daily-program>
+    </p-tabPanel>
+    <p-tabPanel class="w-full" [header]="'Résumé'"
+      ><app-carbon-footprint-resume></app-carbon-footprint-resume
+    ></p-tabPanel>
+  </p-tabView>
+</div>

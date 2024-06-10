@@ -25,6 +25,8 @@ import { TravelComponent } from '~/app/main/components/travel/travel.component';
 import { SharedModule } from '~/app/shared/shared.module';
 import { ProfileDailyProgramComponent } from './main/components/profile/components/profile-travels/profile-daily-program/profile-daily-program.component';
 import { CarbonFootprintDetailsComponent } from './main/components/profile/components/carbon-footprint/carbon-footprint-details/carbon-footprint-details.component';
+import { CarbonFootprintDailyProgramComponent } from './main/components/profile/components/carbon-footprint/carbon-footprint-daily-program/carbon-footprint-daily-program.component';
+import { CarbonFootprintResumeComponent } from './main/components/profile/components/carbon-footprint/carbon-footprint-resume/carbon-footprint-resume.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { CarbonFootprintDetailsComponent } from './main/components/profile/compo
     DailyProgramComponent,
     ProfileDailyProgramComponent,
     CarbonFootprintDetailsComponent,
+    CarbonFootprintDailyProgramComponent,
+    CarbonFootprintResumeComponent,
   ],
   imports: [
     BrowserModule,
