@@ -3,16 +3,6 @@
 Verts et Fauchés is a Progressive Web App (PWA) designed primarily for mobile devices with a preferred format of 360x719.
 The project is developed in collaboration with [Justine Munsch](https://github.com/JustineMunsch).
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
-- [Deployment](#deployment)
-- [License](#license)
-
 ## Introduction
 
 Verts et Fauchés is an Angular-based web application designed to offer a seamless and engaging user experience on mobile devices.
